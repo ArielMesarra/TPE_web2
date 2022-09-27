@@ -1,5 +1,6 @@
 <?php
 require_once('./templates/header.php');
+require_once('./app/controllers/Controller.php');
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
@@ -15,10 +16,12 @@ if (!empty($_GET['action'])) {
 
 $params = explode('/', $accion);
 // $params = ['tabla','asd']
+$taskController = new Controller;
 
 switch ($params[0]) {
     case 'biblioteca':
-        echo '<h1>Biblioteca</h1>' ;
+        echo '<h1>Biblioteca</h1>';
+        $taskController->show_biblioteca();
         break;
     case 'privado':
         echo '<h1>Privado</h1>' ; 
