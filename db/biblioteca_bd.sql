@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-09-2022 a las 22:48:36
+-- Tiempo de generación: 29-09-2022 a las 02:49:45
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `biblioteca_bd`
 --
+CREATE DATABASE IF NOT EXISTS `biblioteca_bd` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `biblioteca_bd`;
 
 -- --------------------------------------------------------
 

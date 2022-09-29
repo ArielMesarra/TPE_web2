@@ -16,7 +16,7 @@ if (!empty($_GET['action'])) {
 
 $params = explode('/', $accion);
 // $params = ['tabla','asd']
-$taskController = new Controller;
+$taskController = new Controller();
 
 switch ($params[0]) {
     case 'biblioteca':
