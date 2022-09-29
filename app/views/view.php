@@ -1,7 +1,7 @@
 <?php
 class View{
     
-    function mostrar_datos($canciones){
+    function showItems($canciones){
         echo '<ul>';
         foreach($canciones as $cancion){
             echo '<li>'.$cancion->nombre.'</li>';

@@ -1,6 +1,6 @@
 <?php
-require_once('./app/models/Model.php');
-require_once('./app/views/View.php');
+require_once './app/models/Model.php';
+require_once './app/views/View.php';
     class Controller{
         private $model;
         private $view;
@@ -9,9 +9,9 @@ require_once('./app/views/View.php');
             $this->model = new Model();
             $this->view = new View();
         }
-        function show_biblioteca(){
-            $canciones=$this->model->traer_datos();
-            $this->view->mostrar_datos($canciones);
+        function showBiblioteca(){
+            $canciones=$this->model->getItems();
+            $this->view->showItems($canciones);
         }
     }
 
