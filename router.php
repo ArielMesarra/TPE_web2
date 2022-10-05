@@ -1,5 +1,5 @@
 <?php
-require_once './templates/header.php';
+require_once './templates/header.tpl';
 require_once './app/controllers/Controller.php';
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');

@@ -12,5 +12,3 @@
         <a href="biblioteca">Biblioteca</a>
         <a href="privado">Privado</a>
     </nav>
-</body>
-</html>
