@@ -13,6 +13,38 @@
             $canciones = $query->fetchAll(PDO::FETCH_OBJ);
             return $canciones;
         }
+        
+        function registrar($datos){
+            var_dump($datos);
+            $nombre = $datos['nombre_usuario'];
+            $email = $datos['email'];
+            $contraseña = $datos['contraseña'];
+            $contraseña = password_hash($contraseña, PASSWORD_BCRYPT);
+            if(!empty($nombre)&&!empty($email)&&!empty($contraseña)){
+                $query=$this->db->prepare("INSERT INTO usuarios(nombre, email, contraseña) VALUES (?,?,?)");
+                $query->execute([$nombre,$email,$contraseña]);
+            }
+        }
+
+        function validar($datos){
+            $nombre = $datos['nombre_usuario'];
+            $contraseña = $datos['contraseña'];
+            if(!empty($nombre)&&!empty($contraseña)){
+                $query=$this->db->prepare('SELECT * FROM usuarios WHERE nombre=?');
+                $query->execute([$nombre]);
+                $usuario_encontrado = $query->fetch(PDO::FETCH_OBJ);
+                if($usuario_encontrado && password_verify($contraseña, ($usuario_encontrado->contraseña))){
+                    session_start();
+                    $_SESSION["logueado"] = true;
+                    $_SESSION["usuario"] = $nombre;
+                    var_dump($_SESSION);
+                    echo '<h1>Entraste!</h1>';
+                }
+                else{
+                    echo '<h1>No tenes permisos de administrador metiche!</h1>';
+                }
+            }
+        }
 
     }
 ?>

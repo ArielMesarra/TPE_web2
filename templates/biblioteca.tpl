@@ -1,4 +1,4 @@
-{include 'templates/header.tpl'}
+
 <ul>
     {foreach from = $canciones item = $cancion}
            
@@ -9,4 +9,4 @@
     
     {/foreach}
 </ul>
-{include 'templates/footer.tpl'}
+

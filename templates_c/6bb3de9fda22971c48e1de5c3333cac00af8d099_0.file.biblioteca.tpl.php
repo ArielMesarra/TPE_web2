@@ -1,29 +1,26 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-05 21:26:26
+/* Smarty version 4.2.1, created on 2022-10-11 23:23:30
   from 'C:\xampp\htdocs\proyectos\TPE_web2\templates\biblioteca.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_633dda62cd3c95_01623492',
+  'unifunc' => 'content_6345ded2b23a79_12965035',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6bb3de9fda22971c48e1de5c3333cac00af8d099' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPE_web2\\templates\\biblioteca.tpl',
-      1 => 1664997898,
+      1 => 1665523403,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:templates/header.tpl' => 1,
-    'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_633dda62cd3c95_01623492 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+function content_6345ded2b23a79_12965035 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <ul>
     <?php
@@ -46,6 +43,6 @@ $_smarty_tpl->tpl_vars['cancion']->do_else = false;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </ul>
-<?php $_smarty_tpl->_subTemplateRender('file:templates/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-}
+
+<?php }
 }

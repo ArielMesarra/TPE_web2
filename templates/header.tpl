@@ -10,5 +10,7 @@
     <nav>
         <a href="inicio">Inicio</a>
         <a href="biblioteca">Biblioteca</a>
-        <a href="privado">Privado</a>
+        <a href="logIn">Log in</a>
+        <a href="register">Register</a>
+        <a href="signOut">Sign out</a>
     </nav>

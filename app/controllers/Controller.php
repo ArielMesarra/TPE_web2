@@ -9,9 +9,39 @@ require_once './app/views/View.php';
             $this->model = new Model();
             $this->view = new View();
         }
+
         function showBiblioteca(){
-            $canciones=$this->model->getItems();
-            $this->view->showItems($canciones);
+            session_start();
+            if($_SESSION["logueado"]){
+                $canciones=$this->model->getItems();
+                $this->view->showItems($canciones);
+
+            }
+            else{
+                echo '<h4>No estas logueado</h4>';
+            }
+        }
+
+        function showRegister(){
+            $this->view->showRegister();
+            echo $_POST['nombre_usuario'];
+            $this->model->registrar($_POST);
+        }
+
+        function showLogin(){
+            session_start();
+            if(isset($_SESSION["logueado"]) && $_SESSION["logueado"]){
+                echo '<h4>Ya estas logueado</h4>';
+            }
+            else{
+                $this->view->showFormLogin();
+                $this->model->validar($_POST);
+            }
+        }
+
+        function signOut(){
+            session_start();
+            session_destroy();
         }
     }
 

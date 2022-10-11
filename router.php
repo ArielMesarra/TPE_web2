@@ -23,11 +23,19 @@ switch ($params[0]) {
         echo '<h1>Biblioteca</h1>';
         $taskController->showBiblioteca();
         break;
-    case 'privado':
-        echo '<h1>Privado</h1>' ; 
+    case 'register':
+        $taskController->showRegister();
+        break;
+    case 'logIn':
+        $taskController->showLogin(); 
+        break;
+    case 'signOut':
+        $taskController->signOut();
         break;
     case 'inicio':
     default:
         echo '<h1>Inicio</h1>';
         break;
 }
+
+require_once './templates/footer.tpl';
