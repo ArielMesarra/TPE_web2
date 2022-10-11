@@ -2,9 +2,10 @@
 require_once './libs/smarty/Smarty.class.php';
 class View{
     
-    function showItems($canciones){
+    function showBiblioteca($canciones,$artistas){
         $smarty = new Smarty();
         $smarty->assign('canciones',$canciones);
+        $smarty->assign('artistas',$artistas);
         $smarty->display('templates/biblioteca.tpl'); 
     }
     function showRegister(){

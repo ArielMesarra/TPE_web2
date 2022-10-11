@@ -13,8 +13,9 @@ require_once './app/views/View.php';
         function showBiblioteca(){
             session_start();
             if($_SESSION["logueado"]){
-                $canciones=$this->model->getItems();
-                $this->view->showItems($canciones);
+                $artistas=$this->model->getArtistas();
+                $canciones=$this->model->getCanciones();
+                $this->view->showBiblioteca($canciones, $artistas);
 
             }
             else{
