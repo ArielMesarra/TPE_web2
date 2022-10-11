@@ -1,11 +1,11 @@
 
 <ul>
     {foreach from = $canciones item = $cancion}
-           
-        <li>Nombre: {$cancion->nombre}</li>
-        <li>Descripcion: {$cancion->descripcion}</li>
-        <li>Fecha {$cancion->fecha_estreno}</li>
-        <li>Artista: {$cancion->nombreDeArtista}</li>
+        
+        Nombre: {$cancion->nombre}
+        Descripcion: {$cancion->descripcion}
+        Fecha {$cancion->fecha_estreno}
+        Artista: {$cancion->nombreDeArtista}
     
     {/foreach}
 </ul>
