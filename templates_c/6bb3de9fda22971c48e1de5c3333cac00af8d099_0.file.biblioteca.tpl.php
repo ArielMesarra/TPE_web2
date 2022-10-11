@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-11 23:52:42
+/* Smarty version 4.2.1, created on 2022-10-12 00:17:41
   from 'C:\xampp\htdocs\proyectos\TPE_web2\templates\biblioteca.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6345e5aa6dc0e7_29439514',
+  'unifunc' => 'content_6345eb85b2da96_94855442',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6bb3de9fda22971c48e1de5c3333cac00af8d099' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPE_web2\\templates\\biblioteca.tpl',
-      1 => 1665525148,
+      1 => 1665526656,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6345e5aa6dc0e7_29439514 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6345eb85b2da96_94855442 (Smarty_Internal_Template $_smarty_tpl) {
 ?><table>
     <thead>
         <td>
@@ -55,15 +55,36 @@ $_smarty_tpl->tpl_vars['artista']->do_else = false;
     <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+</table>
+<table>
+
     <thead>
+        <tr>
         <td>
             <h1>Canciones</h1>
         </td>
-    </thead>
-    <thead>
-        <td>Nombre</td>
-        <td>Fecha</td>
-        <td>Artista</td>
+        <td>
+            <select name="" id="selector_artista">Artista
+            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['artistas']->value, 'artista');
+$_smarty_tpl->tpl_vars['artista']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['artista']->value) {
+$_smarty_tpl->tpl_vars['artista']->do_else = false;
+?>
+            <option value="<?php echo $_smarty_tpl->tpl_vars['artista']->value->nombre;?>
+"><?php echo $_smarty_tpl->tpl_vars['artista']->value->nombre;?>
+</option>
+            <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+            </select>
+        </td>
+        </tr>
+        <tr>
+            <td>Nombre</td>
+            <td>Fecha</td>
+            <td>Artista</td>
+        </tr>
     </thead>
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['canciones']->value, 'cancion');
@@ -91,6 +112,9 @@ $_smarty_tpl->tpl_vars['cancion']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 </table>
+<?php echo '<script'; ?>
+ src="js/tabla.js"><?php echo '</script'; ?>
+>
 
 <?php }
 }

@@ -22,15 +22,27 @@
         </td>
     </tr>
     {/foreach}
+</table>
+<table>
+
     <thead>
+        <tr>
         <td>
             <h1>Canciones</h1>
         </td>
-    </thead>
-    <thead>
-        <td>Nombre</td>
-        <td>Fecha</td>
-        <td>Artista</td>
+        <td>
+            <select name="" id="selector_artista">Artista
+            {foreach from = $artistas item = $artista}
+            <option value="{$artista->nombre}">{$artista->nombre}</option>
+            {/foreach}
+            </select>
+        </td>
+        </tr>
+        <tr>
+            <td>Nombre</td>
+            <td>Fecha</td>
+            <td>Artista</td>
+        </tr>
     </thead>
     {foreach from = $canciones item = $cancion}
         <tr>
@@ -48,4 +60,5 @@
     {/foreach}
 
 </table>
+<script src="js/tabla.js"></script>
 
