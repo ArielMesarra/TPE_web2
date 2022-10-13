@@ -31,6 +31,9 @@ switch ($params[0]) {
         echo '<h1>Biblioteca</h1>';
         $taskController->showBiblioteca();
         break;
+    case 'cancion':
+        echo $params[1];
+        break;
     case 'register':
         $taskregisterController->showRegister();
         break;

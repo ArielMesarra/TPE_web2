@@ -25,6 +25,9 @@
             <td>
                 {$cancion->nombreDeArtista}
             </td>
+            <td>
+                <a href="cancion/{$cancion->id_canciones}">Ver mas</a>
+            </td>
         </tr>
     
     {/foreach}
