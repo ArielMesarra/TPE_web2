@@ -1,8 +1,13 @@
 <?php
 require_once './templates/header.tpl';
-require_once './app/controllers/Controller.php';
+require_once './app/controllers/bibliotecaController.php';
+require_once './app/controllers/loginController.php';
+require_once './app/controllers/registerController.php';
+require_once './app/controllers/signoutController.php';
+
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
+define('INICIO', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/inicio');
 
 //recibir/leer la accion
 if (!empty($_GET['action'])) {
@@ -16,7 +21,10 @@ if (!empty($_GET['action'])) {
 
 $params = explode('/', $accion);
 // $params = ['tabla','asd']
-$taskController = new Controller();
+$taskController = new bibliotecaController();
+$taskregisterController = new registerController();
+$taskloginController = new loginController();
+$tasksignoutController = new signoutController();
 
 switch ($params[0]) {
     case 'biblioteca':
@@ -24,13 +32,13 @@ switch ($params[0]) {
         $taskController->showBiblioteca();
         break;
     case 'register':
-        $taskController->showRegister();
+        $taskregisterController->showRegister();
         break;
     case 'logIn':
-        $taskController->showLogin(); 
+        $taskloginController->showLogin(); 
         break;
     case 'signOut':
-        $taskController->signOut();
+        $tasksignoutController->signOut();
         break;
     case 'inicio':
     default:
