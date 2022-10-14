@@ -17,8 +17,30 @@ class loginController{
         }
         else{
             $this->view->showFormLogin();
-            $this->model->validar($_POST);
+            if(!empty($_POST['nombre_usuario'])&&!empty($_POST['contraseña'])){
+                $nombre = $_POST['nombre_usuario'];
+                $contraseña = $_POST['contraseña'];
+
+                $user = $this->model->validar($nombre);
+
+                if($user && password_verify($contraseña, ($user->contraseña))){
+                    session_start();
+                    $_SESSION["logueado"] = true;
+                    $_SESSION["usuario"] = $nombre;
+                    header('location: '.INICIO);
+                }
+                else{
+                    echo '<h1>No tenes permisos de administrador!</h1>';
+                }
+            }
         }
+    }
+
+
+    function signOut(){
+        session_start();
+        session_destroy();
+        header('location: '.INICIO);
     }
 }
 

@@ -12,8 +12,18 @@ require_once './app/models/registerModel.php';
 
         function showRegister(){
             $this->view->showRegister();
-            echo $_POST['nombre_usuario'];
-            $this->model->registrar($_POST);
+            if(!empty($_POST['nombre_usuario'])&&!empty($_POST['email'])&&!empty($_POST['contraseña'])){
+                $nombre = $_POST['nombre_usuario'];
+                $email = $_POST['email'];
+                $contraseña = $_POST['contraseña'];
+                $contraseña = password_hash($contraseña, PASSWORD_BCRYPT);
+                $this->model->registrar($nombre,$email,$contraseña);
+                echo '<h2>Te registraste correctamente</h2>';
+            }
+            else{
+                echo '<h2>Todos los campos deben estar completos!</h2>';
+            }
+            
         }
     }
 

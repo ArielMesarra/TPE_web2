@@ -28,5 +28,25 @@
             $artistas = $query->fetchAll(PDO::FETCH_OBJ);
             return $artistas;
         }
+
+        function borrarCategoria($artistaBorrar){
+            $query = $this->db->prepare('DELETE FROM artistas WHERE nombre=?');
+            //$query->execute([$artistaBorrar]);
+
+        }
+
+        function borrarCancion($cancionBorrar){
+            $query = $this->db->prepare('DELETE FROM canciones WHERE nombre=?');
+            $query->execute([$cancionBorrar]);
+        }
+
+        function agregarCancion($cancion){
+            echo $cancion['nombreAgregarCancion'];
+            echo $cancion['descripcionAgregarCancion'];
+            echo $cancion['fechaAgregarCancion'];
+            echo $cancion['artistaAgregarCancion'];
+            echo 'llegamos al model';
+            
+        }
     }
 ?>

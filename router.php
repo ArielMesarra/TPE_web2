@@ -3,11 +3,11 @@ require_once './templates/header.tpl';
 require_once './app/controllers/bibliotecaController.php';
 require_once './app/controllers/loginController.php';
 require_once './app/controllers/registerController.php';
-require_once './app/controllers/signoutController.php';
-
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 define('INICIO', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/inicio');
+define('LOGIN', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/logIn');
+define('BIBLIOTECA', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/biblioteca');
 
 //recibir/leer la accion
 if (!empty($_GET['action'])) {
@@ -21,15 +21,14 @@ if (!empty($_GET['action'])) {
 
 $params = explode('/', $accion);
 // $params = ['tabla','asd']
-$taskController = new bibliotecaController();
+$taskbibliotecaController = new bibliotecaController();
 $taskregisterController = new registerController();
 $taskloginController = new loginController();
-$tasksignoutController = new signoutController();
 
 switch ($params[0]) {
     case 'biblioteca':
         echo '<h1>Biblioteca</h1>';
-        $taskController->showBiblioteca();
+        $taskbibliotecaController->showBiblioteca();
         break;
     case 'cancion':
         echo $params[1];
@@ -41,7 +40,7 @@ switch ($params[0]) {
         $taskloginController->showLogin(); 
         break;
     case 'signOut':
-        $tasksignoutController->signOut();
+        $taskloginController->signOut();
         break;
     case 'inicio':
     default:
