@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-14 23:25:34
+/* Smarty version 4.2.1, created on 2022-10-15 00:56:01
   from 'C:\xampp\htdocs\proyectos\TPE_web2\templates\editarCancion.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6349d3ce1c32f9_95741647',
+  'unifunc' => 'content_6349e901d16ea8_26484298',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f81dd246f50739e8d924bb56d223b91d6d9aaafc' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPE_web2\\templates\\editarCancion.tpl',
-      1 => 1665782730,
+      1 => 1665788147,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6349d3ce1c32f9_95741647 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6349e901d16ea8_26484298 (Smarty_Internal_Template $_smarty_tpl) {
 ?><h2>Editar canciones</h2>
 
 <form method="POST">
@@ -39,11 +39,11 @@ $_smarty_tpl->tpl_vars['cancion']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </select>
     <label for="">Nombre</label>
-    <input type="text" name="nombreCancionEditar">
+    <input class="form-control" type="text" name="nombreCancionEditar">
     <label for="">Descripcion</label>
     <textarea name="descripcionCancionEditar" cols="30" rows="5"></textarea>
     <label for="">Fecha de estreno</label>
-    <input type="date" name="fechaCancionEditar">
+    <input class="form-control" type="date" name="fechaCancionEditar">
     <select name="artistaIdEditarC" value="">Artista
         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['artistas']->value, 'artista');

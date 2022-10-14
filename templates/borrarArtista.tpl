@@ -5,6 +5,6 @@
         <option value="{$artista->nombre}">{$artista->nombre}</option>
         {/foreach}
     </select>
-    <input type="submit">
+    <input class="form-control" type="submit">
 </form>
 

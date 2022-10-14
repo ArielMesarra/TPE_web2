@@ -1,4 +1,4 @@
-<table>
+<table class="table">
     <thead>
         <td>
             <h1>Artistas</h1>
@@ -27,7 +27,7 @@
 
 
 <form method="POST">
-    <select name="artista" id="">Artista
+    <select name="artista" id="" >Artista
         <option value="*">Todos</option>
         {foreach from = $artistas item = $artista}
         <option value="{$artista->nombre}">{$artista->nombre}</option>

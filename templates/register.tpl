@@ -1,9 +1,9 @@
 <form method="POST">
     <label for="">Nombre de usuario</label>
-    <input type="text" name="nombre_usuario">
+    <input class="form-control" type="text" name="nombre_usuario">
     <label for="">Email</label>
-    <input type="email" name="email">
+    <input class="form-control" type="email" name="email">
     <label for="">Contraseña</label>
-    <input type="password" name="contraseña">
-    <input type="submit">
+    <input class="form-control" type="password" name="contraseña">
+    <input class="form-control" type="submit">
 </form>

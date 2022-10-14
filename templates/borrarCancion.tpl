@@ -5,5 +5,5 @@
         <option value="{$cancion->nombre}">{$cancion->nombre}</option>
         {/foreach}
     </select>
-    <input type="submit">
+    <input class="form-control" type="submit">
 </form>

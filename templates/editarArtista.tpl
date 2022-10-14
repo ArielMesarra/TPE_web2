@@ -7,11 +7,11 @@
         {/foreach}
     </select>
     <label for="">Nombre</label>
-    <input type="text" name="nombreArtistaEditar">
+    <input class="form-control" type="text" name="nombreArtistaEditar">
     <label for="">Lugar</label>
-    <input type="text" name="lugarArtistaEditar">
+    <input class="form-control" type="text" name="lugarArtistaEditar">
     <label for="">Numero de integrantes</label>
-    <input type="number" name="integrantesArtistaEditar">
+    <input class="form-control" type="number" name="integrantesArtistaEditar">
     <button type="submit">Editar</button>
 </form>
 
