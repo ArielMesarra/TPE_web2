@@ -1,13 +1,17 @@
 <?php
-require_once './templates/header.tpl';
-require_once './app/controllers/bibliotecaController.php';
-require_once './app/controllers/loginController.php';
-require_once './app/controllers/registerController.php';
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 define('INICIO', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/inicio');
 define('LOGIN', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/logIn');
 define('BIBLIOTECA', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/biblioteca');
+
+require_once './app/views/staticView.php';
+$staticView = new StaticView();
+$staticView->showHeader();
+require_once './app/controllers/bibliotecaController.php';
+require_once './app/controllers/loginController.php';
+require_once './app/controllers/registerController.php';
+require_once './app/controllers/descripcionController.php';
 
 //recibir/leer la accion
 if (!empty($_GET['action'])) {
@@ -21,6 +25,8 @@ if (!empty($_GET['action'])) {
 
 $params = explode('/', $accion);
 // $params = ['tabla','asd']
+
+$taskdescripcionController = new DescripcionController();
 $taskbibliotecaController = new bibliotecaController();
 $taskregisterController = new registerController();
 $taskloginController = new loginController();
@@ -31,7 +37,7 @@ switch ($params[0]) {
         $taskbibliotecaController->showBiblioteca();
         break;
     case 'cancion':
-        echo $params[1];
+        $taskdescripcionController->showDescripcion($params[1]);
         break;
     case 'register':
         $taskregisterController->showRegister();
@@ -47,5 +53,6 @@ switch ($params[0]) {
         echo '<h1>Inicio</h1>';
         break;
 }
+$staticView->showFooter();
 
-require_once './templates/footer.tpl';
+

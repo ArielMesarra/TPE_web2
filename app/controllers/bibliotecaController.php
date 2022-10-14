@@ -35,6 +35,7 @@ require_once './app/views/bibliotecaView.php';
                 if(!empty($_POST['cancionSelec'])){
                     $cancionBorrar=$_POST['cancionSelec'];
                     $this->model->borrarCancion($cancionBorrar);
+                    header('location: '.INICIO);
                 }
 
 
