@@ -53,12 +53,15 @@ require_once './app/views/bibliotecaView.php';
 
                 //Aca editamos un artista
                 $this->view->editarArtista($artistas);
-                if(!empty($_POST['artistaEditar'])){
-                    $artistaId = $this->model->getArtista($_POST['artistaEditar']);
-                    $this->view->editarArtista2($artistaId);
-                    if(!empty($_POST['nombreArtistaEditar'])&&!empty($_POST['lugarArtistaEditar'])&&!empty($_POST['integrantesArtistaEditar'])){
-                        $this->model->editarArtista($_POST, $artistaId);
-                    }
+                if(!empty($_POST['artistaId']) && !empty($_POST['nombreArtistaEditar'])&&!empty($_POST['lugarArtistaEditar'])&&!empty($_POST['integrantesArtistaEditar'])){
+                    $this->model->editarArtista($_POST);
+                }
+
+
+                //aca editamos una cancion
+                $this->view->editarCancion($canciones, $artistas);
+                if(!empty($_POST['nombreCancionEditar'])&&!empty($_POST['descripcionCancionEditar'])&&!empty($_POST['fechaCancionEditar'])&&!empty($_POST['artistaIdEditarC'])&&!empty($_POST['cancionId'])){
+                    $this->model->editarCancion($_POST);
                 }
 
                     
@@ -115,5 +118,6 @@ require_once './app/views/bibliotecaView.php';
         }
 
     }
+    
 
 ?>

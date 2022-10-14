@@ -30,6 +30,7 @@
         }
 
         function borrarCategoria($artistaBorrar){
+            echo '<h1>Estas borrando todas las canciones de este artista!</h1>';
             $query = $this->db->prepare('DELETE FROM artistas WHERE nombre=?');
             $query->execute([$artistaBorrar]);
 
@@ -66,14 +67,25 @@
             return $artista;
         }
 
-        function editarArtista($datos, $id){
+        function editarArtista($datos){
             $nombre=$datos['nombreArtistaEditar'];
             $lugar=$datos['lugarArtistaEditar'];
             $integrantes=$datos['integrantesArtistaEditar'];
+            $id=$datos['artistaId'];
             // $query = $this->db->prepare('UPDATE nombre'.'SET nombre=? WHERE id_artistas=?');
-            // $query = $this->db->prepare('UPDATE artistas SET nombre=? ,lugar=? ,integrantes_num=? WHERE id_artistas=? ');
-            // $query->execute([$nombre, $lugar, $integrantes, $id]);
+            $query = $this->db->prepare('UPDATE artistas SET nombre=? ,lugar=? ,integrantes_num=? WHERE id_artistas=? ');
+            $query->execute([$nombre, $lugar, $integrantes, $id]);
             echo '<h1>Ento en el editar MODEL</h1>';
         }
-    }
-?>
+
+        function editarCancion($datos){
+            $nombre = $datos['nombreCancionEditar'];
+            $idCancion = $datos['cancionId'];
+            $descripcion = $datos['descripcionCancionEditar'];
+            $fecha = $datos['fechaCancionEditar'];
+            $idArtista = $datos['artistaIdEditarC'];
+            $query = $this->db->prepare('UPDATE canciones SET nombre=? ,descripcion=? ,fecha_estreno=?, fk_id_artistas=? WHERE id_canciones=?');
+            $query->execute([$nombre,$descripcion,$fecha,$idArtista, $idCancion]);
+        }
+    } 
+?>  

@@ -50,13 +50,13 @@ class bibliotecaView{
         $smarty->display('templates/editarArtista.tpl');
     }
 
-    function editarArtista2($artista){
-        var_dump($artista);
+    function editarCancion($canciones, $artistas){
         $smarty = new Smarty();
-        $smarty->assign('titulo',"editar");
-        $smarty->assign('artista',$artista);
-        $smarty->display('templates/editarArtista2.tpl');
+        $smarty->assign('canciones', $canciones);
+        $smarty->assign('artistas', $artistas);
+        $smarty->display('templates/editarCancion.tpl');
     }
+
     
 }
 
