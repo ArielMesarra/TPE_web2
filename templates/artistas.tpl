@@ -24,15 +24,17 @@
     {/foreach}
 </table>
 
+
+
 <form method="POST">
     <select name="artista" id="">Artista
-    <option value="*">Todos</option>
-    {foreach from = $artistas item = $artista}
-    <option value="{$artista->nombre}">{$artista->nombre}</option>
-    {/foreach}
-</select>
-<input type="submit">
-</form>
+        <option value="*">Todos</option>
+        {foreach from = $artistas item = $artista}
+        <option value="{$artista->nombre}">{$artista->nombre}</option>
+        {/foreach}
+    </select>
+    <input type="submit">
+</form> 
 
 
 

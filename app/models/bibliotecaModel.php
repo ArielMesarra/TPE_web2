@@ -56,6 +56,24 @@
             $integrantesArtista=$artista['integrantesArtistaAgregar'];
             $query = $this->db->prepare('INSERT INTO artistas(nombre, lugar, integrantes_num) VALUES (?,?,?)');
             $query->execute([$nombreArtista, $lugarArtista, $integrantesArtista]);
+            echo '<h1>Ento en el agregar MODEL</h1>';
+        }
+
+        function getArtista($id){
+            $query = $this->db->prepare('SELECT a.* FROM artistas AS a WHERE id_artistas=?');
+            $query->execute([$id]);
+            $artista = $query->fetchAll(PDO::FETCH_OBJ);
+            return $artista;
+        }
+
+        function editarArtista($datos, $id){
+            $nombre=$datos['nombreArtistaEditar'];
+            $lugar=$datos['lugarArtistaEditar'];
+            $integrantes=$datos['integrantesArtistaEditar'];
+            // $query = $this->db->prepare('UPDATE nombre'.'SET nombre=? WHERE id_artistas=?');
+            // $query = $this->db->prepare('UPDATE artistas SET nombre=? ,lugar=? ,integrantes_num=? WHERE id_artistas=? ');
+            // $query->execute([$nombre, $lugar, $integrantes, $id]);
+            echo '<h1>Ento en el editar MODEL</h1>';
         }
     }
 ?>

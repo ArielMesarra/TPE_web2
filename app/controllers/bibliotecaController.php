@@ -16,9 +16,11 @@ require_once './app/views/bibliotecaView.php';
             if(!isset($_POST['artista'])){
                 $_POST['artista']='*';
             }
+            
             $this->view->showArtistas($artistas);
             $canciones=$this->model->getCanciones($_POST['artista']);
             $this->view->showCanciones($canciones);
+
             if($_SESSION["logueado"]){
                 $this->view->borrarArtista($artistas);
                 if(!empty($_POST['artistaSelec'])){
@@ -27,18 +29,36 @@ require_once './app/views/bibliotecaView.php';
                     var_dump(INICIO);
                     header('location: '.INICIO);
                     }
+
+
                 $this->view->borrarCancion($canciones);
                 if(!empty($_POST['cancionSelec'])){
                     $cancionBorrar=$_POST['cancionSelec'];
                     $this->model->borrarCancion($cancionBorrar);
                 }
+
+
                 $this->view->agregarCancion($artistas);
                 if(!empty($_POST['nombreAgregarCancion'])&&!empty($_POST['descripcionAgregarCancion'])&&!empty($_POST['fechaAgregarCancion'])&&!empty($_POST['artistaAgregarCancion'])){
                     $this->model->agregarCancion($_POST);
                 }
-                $this->view->agregarArtista();
+
+
+                //Aca agregamos un artista
+                $this->view->agregarArtista('Agregar');
                 if(!empty($_POST['nombreArtistaAgregar'])&&!empty($_POST['lugarArtistaAgregar'])&&!empty($_POST['integrantesArtistaAgregar'])){
                     $this->model->agregarArtista($_POST);
+                }
+
+
+                //Aca editamos un artista
+                $this->view->editarArtista($artistas);
+                if(!empty($_POST['artistaEditar'])){
+                    $artistaId = $this->model->getArtista($_POST['artistaEditar']);
+                    $this->view->editarArtista2($artistaId);
+                    if(!empty($_POST['nombreArtistaEditar'])&&!empty($_POST['lugarArtistaEditar'])&&!empty($_POST['integrantesArtistaEditar'])){
+                        $this->model->editarArtista($_POST, $artistaId);
+                    }
                 }
 
                     

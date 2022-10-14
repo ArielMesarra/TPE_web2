@@ -38,9 +38,24 @@ class bibliotecaView{
         $smarty->display('templates/agregarCancion.tpl');
     }
 
-    function agregarArtista(){
+    function agregarArtista($titulo){
         $smarty = new Smarty();
+        $smarty->assign('titulo',$titulo);
         $smarty->display('templates/agregarArtista.tpl');
+    }
+
+    function editarArtista($artistas){
+        $smarty = new Smarty();
+        $smarty->assign('artistas', $artistas);
+        $smarty->display('templates/editarArtista.tpl');
+    }
+
+    function editarArtista2($artista){
+        var_dump($artista);
+        $smarty = new Smarty();
+        $smarty->assign('titulo',"editar");
+        $smarty->assign('artista',$artista);
+        $smarty->display('templates/editarArtista2.tpl');
     }
     
 }
