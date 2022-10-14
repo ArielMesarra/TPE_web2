@@ -1,3 +1,4 @@
+<h2>Agregar cancion</h2>
 <form method="POST">
     <label for="">Nombre</label>
     <input type="text" name="nombreAgregarCancion">
@@ -7,7 +8,7 @@
     <input type="date" name="fechaAgregarCancion">
     <select name="artistaAgregarCancion" id="">
         {foreach from = $artistas item = $artista}
-            <option value="{$artista->nombre}">{$artista->nombre}</option>
+            <option value="{$artista->id_artistas}">{$artista->nombre}</option>
         {/foreach}
     </select>
     <button type="submit">Agregar</button>

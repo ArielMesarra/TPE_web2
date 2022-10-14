@@ -37,6 +37,11 @@ class bibliotecaView{
         $smarty->assign('artistas',$artistas);
         $smarty->display('templates/agregarCancion.tpl');
     }
+
+    function agregarArtista(){
+        $smarty = new Smarty();
+        $smarty->display('templates/agregarArtista.tpl');
+    }
     
 }
 
