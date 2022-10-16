@@ -16,6 +16,16 @@ class BorrarArtistaModel{
         $query->execute([$id]);
     }
 
+    function borrarCancion($id){
+        // echo '<h1>ENTRASTE AL MODEL</h1>';
+        $id=(int)$id;
+        // echo $id;
+        $query=$this->db->prepare('DELETE FROM canciones WHERE id_canciones=?');
+         
+        // $query = $this->db->prepare('DELETE FROM artistas WHERE id_artistas=?');
+        $query->execute([$id]);
+    }
+
 }
 
 ?>

@@ -55,8 +55,10 @@ switch ($params[0]) {
         $taskBorrarController->borrarArtista($_POST['borrar']);
         break;
     case 'accionBorrarCancion':
-        // var_dump($_POST);
-        echo 'borarC';
+        var_dump($_POST);
+        $taskBorrarController->borrarCancion($_POST['borrar']);
+
+        // echo 'borarC';
         // $taskBorrarArtistaController->borrarArtista($_POST['borrar']);
         break;
     case 'accionEditarCancion':

@@ -36,7 +36,7 @@
                 </form>
                 <form action="accionBorrarCancion" method="POST">
                     <td>
-                        <button type="submit" name="borrar" value="{$canciones->id_canciones}">Borrar</button>
+                        <button type="submit" name="borrar" value="{$cancion->id_canciones}">Borrar</button>
                     </td>
                 </form>
                 {/if}

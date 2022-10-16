@@ -28,6 +28,22 @@ class BorrarController{
         }
 
     }
+    function borrarCancion($idCancion){
+        // echo 'entro'.$idCancion;
+        // $this->view->confirmarBorrar($idArtista);
+
+        // // var_dump($_POST);
+        // if(isset($_POST['confirm'])){
+        //     echo 'entraste aca';
+        //     if($_POST['confirm'] == 'true'){
+        //         var_dump($_POST['confirm']);
+        //         echo '<h1>'.$artistaBorrar.'</h1>';
+                $this->model->borrarCancion($idCancion);
+        //     }
+            header('location: '.BIBLIOTECA);
+        // }
+
+    }
 
 
 }
