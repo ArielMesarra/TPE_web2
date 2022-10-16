@@ -15,6 +15,9 @@ require_once './app/controllers/descripcionController.php';
 require_once './app/controllers/BorrarController.php';
 require_once './app/controllers/EditarController.php';
 
+require_once './app/controllers/EditarArtistaController.php';
+
+
 //recibir/leer la accion
 if (!empty($_GET['action'])) {
     $accion = $_GET['action'];
@@ -28,7 +31,9 @@ if (!empty($_GET['action'])) {
 $params = explode('/', $accion);
 // $params = ['tabla','asd']
 
-$taskEditarController = new EditarController();
+// $taskEditarController = new EditarController();
+
+$taskEditarArtistaController = new EditarArtistaController();
 
 $taskBorrarController = new BorrarController();
 $taskdescripcionController = new DescripcionController();
@@ -50,21 +55,24 @@ switch ($params[0]) {
     case 'logIn':
         $taskloginController->showLogin(); 
         break;
+        
+        case 'accionBorrarArtista':
+            // var_dump($_POST);
+            $taskBorrarController->borrarArtista($_POST['borrar']);
+            break;
+            case 'accionBorrarCancion':
+                var_dump($_POST);
+                $taskBorrarController->borrarCancion($_POST['borrar']);
+                
+                break;
+                
     case 'accionEditarArtista':
-        var_dump($_POST);
-        break;
-
-    case 'accionBorrarArtista':
+        echo 'ruter editar';
         // var_dump($_POST);
-        $taskBorrarController->borrarArtista($_POST['borrar']);
+        $taskEditarArtistaController->editarArtista(); 
+        
         break;
-    case 'accionBorrarCancion':
-        var_dump($_POST);
-        $taskBorrarController->borrarCancion($_POST['borrar']);
 
-        // echo 'borarC';
-        // $taskBorrarArtistaController->borrarArtista($_POST['borrar']);
-        break;
     case 'accionEditarCancion':
         // var_dump($_POST);
         $taskEditarController->editarCancion();

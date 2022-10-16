@@ -1,6 +1,6 @@
 <h2>Editar artistas</h2>
 
-<form method="POST">
+{* <form method="POST">
     <select name="artistaId" value="">Artista
         {foreach from = $artistas item = $artista}
         <option value="{$artista->id_artistas}">{$artista->nombre}</option>
@@ -14,4 +14,4 @@
     <input class="form-control" type="number" name="integrantesArtistaEditar">
     <button type="submit">Editar</button>
 </form>
-
+ *}
