@@ -12,9 +12,11 @@ class BorrarArtistaController{
         $this->view= new BorrarArtistaView();
     }
 
-    function borrarArtista($artistaBorrar){
-        $this->view->confirmarBorrar($artistaBorrar);
-        var_dump($_POST);
+    function borrarArtista($idArtista){
+        echo 'entro';
+        $this->view->confirmarBorrar($idArtista);
+
+        // var_dump($_POST);
         if(isset($_POST['confirm'])){
             echo 'entraste aca';
             if($_POST['confirm'] == 'true'){

@@ -50,7 +50,8 @@ switch ($params[0]) {
         var_dump($_POST);
         break;
     case 'accionBorrar':
-        $taskBorrarArtistaController->borrarArtista($_POST);
+        // var_dump($_POST);
+        $taskBorrarArtistaController->borrarArtista($_POST['borrar']);
         break;
     case 'signOut':
         $taskloginController->signOut();
