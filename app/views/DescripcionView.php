@@ -6,6 +6,9 @@ require_once './libs/smarty/Smarty.class.php';
             $smarty->assign('cancion', $cancion);
             $smarty->display('templates/descripcion.tpl');
         }
+        function mostrar(){
+            echo 'anda';
+        }
     }
 
 ?>

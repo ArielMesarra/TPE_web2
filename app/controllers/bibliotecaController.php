@@ -35,39 +35,39 @@ require_once './app/AuthHelper/AuthHelper.php';
 
 
 
-                $this->view->borrarCancion($canciones);
-                if(!empty($_POST['cancionSelec'])){
-                    $cancionBorrar=$_POST['cancionSelec'];
-                    $this->model->borrarCancion($cancionBorrar);
-                    header('location: '.INICIO);
-                }
+                // $this->view->borrarCancion($canciones);
+                // if(!empty($_POST['cancionSelec'])){
+                //     $cancionBorrar=$_POST['cancionSelec'];
+                //     $this->model->borrarCancion($cancionBorrar);
+                //     header('location: '.INICIO);
+                // }
 
 
-                $this->view->agregarCancion($artistas);
-                if(!empty($_POST['nombreAgregarCancion'])&&!empty($_POST['descripcionAgregarCancion'])&&!empty($_POST['fechaAgregarCancion'])&&!empty($_POST['artistaAgregarCancion'])){
-                    $this->model->agregarCancion($_POST);
-                }
+                // $this->view->agregarCancion($artistas);
+                // if(!empty($_POST['nombreAgregarCancion'])&&!empty($_POST['descripcionAgregarCancion'])&&!empty($_POST['fechaAgregarCancion'])&&!empty($_POST['artistaAgregarCancion'])){
+                //     $this->model->agregarCancion($_POST);
+                // }
 
 
-                //Aca agregamos un artista
-                $this->view->agregarArtista('Agregar');
-                if(!empty($_POST['nombreArtistaAgregar'])&&!empty($_POST['lugarArtistaAgregar'])&&!empty($_POST['integrantesArtistaAgregar'])){
-                    $this->model->agregarArtista($_POST);
-                }
+                // //Aca agregamos un artista
+                // $this->view->agregarArtista('Agregar');
+                // if(!empty($_POST['nombreArtistaAgregar'])&&!empty($_POST['lugarArtistaAgregar'])&&!empty($_POST['integrantesArtistaAgregar'])){
+                //     $this->model->agregarArtista($_POST);
+                // }
 
 
-                //Aca editamos un artista
-                $this->view->editarArtista($artistas);
-                if(!empty($_POST['artistaId']) && !empty($_POST['nombreArtistaEditar'])&&!empty($_POST['lugarArtistaEditar'])&&!empty($_POST['integrantesArtistaEditar'])){
-                    $this->model->editarArtista($_POST);
-                }
+                // //Aca editamos un artista
+                // $this->view->editarArtista($artistas);
+                // if(!empty($_POST['artistaId']) && !empty($_POST['nombreArtistaEditar'])&&!empty($_POST['lugarArtistaEditar'])&&!empty($_POST['integrantesArtistaEditar'])){
+                //     $this->model->editarArtista($_POST);
+                // }
 
 
-                //aca editamos una cancion
-                $this->view->editarCancion($canciones, $artistas);
-                if(!empty($_POST['nombreCancionEditar'])&&!empty($_POST['descripcionCancionEditar'])&&!empty($_POST['fechaCancionEditar'])&&!empty($_POST['artistaIdEditarC'])&&!empty($_POST['cancionId'])){
-                    $this->model->editarCancion($_POST);
-                }
+                // //aca editamos una cancion
+                // $this->view->editarCancion($canciones, $artistas);
+                // if(!empty($_POST['nombreCancionEditar'])&&!empty($_POST['descripcionCancionEditar'])&&!empty($_POST['fechaCancionEditar'])&&!empty($_POST['artistaIdEditarC'])&&!empty($_POST['cancionId'])){
+                //     $this->model->editarCancion($_POST);
+                // }
 
                     
                 // $this->view->mostrarOpciones();
