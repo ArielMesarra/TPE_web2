@@ -2,7 +2,7 @@
 require_once './app/models/BorrarArtistaModel.php';
 require_once './app/views/BorrarArtistaView.php';
 
-class BorrarArtistaController{
+class BorrarController{
     private $model;
     private $view;
 
