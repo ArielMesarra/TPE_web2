@@ -1,11 +1,14 @@
 <?php
 require_once './app/models/bibliotecaModel.php';
 require_once './app/views/bibliotecaView.php';
+require_once './app/AuthHelper/AuthHelper.php';
     class bibliotecaController{
         private $model;
         private $view;
+        private $helper;
 
         function __construct(){
+            $this->helper = new AuthHelper();
             $this->model = new bibliotecaModel();
             $this->view = new bibliotecaView();
         }
@@ -17,18 +20,19 @@ require_once './app/views/bibliotecaView.php';
                 $_POST['artista']='*';
             }
             
-            $this->view->showArtistas($artistas);
+            $this->view->showArtistas($artistas, $this->helper->checkLoggedIn());
             $canciones=$this->model->getCanciones($_POST['artista']);
-            $this->view->showCanciones($canciones);
+            $this->view->showCanciones($canciones, $this->helper->checkLoggedIn());
 
-            if($_SESSION["logueado"]){
-                $this->view->borrarArtista($artistas);
-                if(!empty($_POST['artistaSelec'])){
-                        $artistaBorrar=$_POST['artistaSelec'];
-                        $this->model->borrarCategoria($artistaBorrar);
-                    var_dump(INICIO);
-                    header('location: '.INICIO);
-                    }
+            // if($_SESSION["logueado"]){
+            //     $this->view->borrarArtista($artistas);
+            //     if(!empty($_POST['artistaSelec'])){
+            //             $artistaBorrar=$_POST['artistaSelec'];
+            //             $this->model->borrarCategoria($artistaBorrar);
+            //         var_dump(INICIO);
+            //         header('location: '.INICIO);
+            //         }
+
 
 
                 $this->view->borrarCancion($canciones);
@@ -114,8 +118,8 @@ require_once './app/views/bibliotecaView.php';
                 //         echo $_POST['nombreAgregarCancion'];
 
                 // }
-                
-            }
+                 
+            
         }
 
     }

@@ -1,19 +1,22 @@
 <?php
 require_once './app/views/loginView.php';
 require_once './app/models/loginModel.php';
+require_once './app/AuthHelper/AuthHelper.php';
 class loginController{
     private $model;
     private $view;
+    private $helper;
 
     function __construct(){
+        $this->helper = new AuthHelper();
         $this->model = new loginModel();
         $this->view = new loginView();
     }
 
     function showLogin(){
         session_start();
-        if(isset($_SESSION["logueado"]) && $_SESSION["logueado"]){
-            echo '<h4>Ya estas logueado</h4>';
+        if($this->helper->checkLoggedIn()){
+            echo "<h2>Ya estas logueado</h2>";
         }
         else{
             $this->view->showFormLogin();

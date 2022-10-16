@@ -3,7 +3,7 @@
     <thead>
         <tr>
         <td>
-            <h1>Canciones</h1>
+            <h2>Canciones</h2>
         </td>
         <td>
         </td>

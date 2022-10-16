@@ -12,6 +12,7 @@ require_once './app/controllers/bibliotecaController.php';
 require_once './app/controllers/loginController.php';
 require_once './app/controllers/registerController.php';
 require_once './app/controllers/descripcionController.php';
+require_once './app/controllers/BorrarArtistaController.php';
 
 //recibir/leer la accion
 if (!empty($_GET['action'])) {
@@ -25,7 +26,7 @@ if (!empty($_GET['action'])) {
 
 $params = explode('/', $accion);
 // $params = ['tabla','asd']
-
+$taskBorrarArtistaController = new BorrarArtistaController();
 $taskdescripcionController = new DescripcionController();
 $taskbibliotecaController = new bibliotecaController();
 $taskregisterController = new registerController();
@@ -44,6 +45,12 @@ switch ($params[0]) {
         break;
     case 'logIn':
         $taskloginController->showLogin(); 
+        break;
+    case 'accionEditar':
+        var_dump($_POST);
+        break;
+    case 'accionBorrar':
+        $taskBorrarArtistaController->borrarArtista($_POST);
         break;
     case 'signOut':
         $taskloginController->signOut();

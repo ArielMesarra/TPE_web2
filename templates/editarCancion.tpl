@@ -9,7 +9,7 @@
     <label for="">Nombre</label>
     <input class="form-control" type="text" name="nombreCancionEditar">
     <label for="">Descripcion</label>
-    <textarea name="descripcionCancionEditar" cols="30" rows="5"></textarea>
+    <textarea class="form-control" name="descripcionCancionEditar" cols="30" rows="5"></textarea>
     <label for="">Fecha de estreno</label>
     <input class="form-control" type="date" name="fechaCancionEditar">
     <select name="artistaIdEditarC" value="">Artista

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-15 00:48:40
+/* Smarty version 4.2.1, created on 2022-10-15 16:17:01
   from 'C:\xampp\htdocs\proyectos\TPE_web2\templates\canciones.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6349e748305eb8_19755652',
+  'unifunc' => 'content_634ac0dd041078_28229098',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1d8455e224a048f6e7110a1ad18637bef8ee4b77' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPE_web2\\templates\\canciones.tpl',
-      1 => 1665787714,
+      1 => 1665843417,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6349e748305eb8_19755652 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634ac0dd041078_28229098 (Smarty_Internal_Template $_smarty_tpl) {
 ?><table class="table">
 
     <thead>
         <tr>
         <td>
-            <h1>Canciones</h1>
+            <h2>Canciones</h2>
         </td>
         <td>
         </td>

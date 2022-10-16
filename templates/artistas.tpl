@@ -1,7 +1,7 @@
 <table class="table">
     <thead>
         <td>
-            <h1>Artistas</h1>
+            <h2>Artistas</h2>
         </td>
     </thead>
     <thead>
@@ -20,21 +20,22 @@
         <td>
             {$artista->integrantes_num}
         </td>
+        {if $sesion eq true}
+        <form action="accionEditar" method="POST">
+            <td>
+                <button type="submit" name="editar" value="{$artista->id_artistas}">Editar</button>
+            </td>
+        </form>
+        <form action="accionBorrar" method="POST">
+            <td>
+                <button type="submit" name="borrar" value="{$artista->id_artistas}">Borrar</button>
+            </td>
+        </form>
+        {/if}
     </tr>
     {/foreach}
 </table>
 
-
-
-<form method="POST">
-    <select name="artista" id="" >Artista
-        <option value="*">Todos</option>
-        {foreach from = $artistas item = $artista}
-        <option value="{$artista->nombre}">{$artista->nombre}</option>
-        {/foreach}
-    </select>
-    <input type="submit">
-</form> 
 
 
 

@@ -2,14 +2,16 @@
 require_once './libs/smarty/Smarty.class.php';
 
 class bibliotecaView{
-    function showArtistas($artistas){
+    function showArtistas($artistas, $sesion){
         $smarty = new Smarty();
+        $smarty->assign('sesion', $sesion);
         $smarty->assign('artistas',$artistas);
         $smarty->display('templates/artistas.tpl'); 
     }
     
-    function showCanciones($canciones){
+    function showCanciones($canciones, $sesion){
         $smarty = new Smarty();
+        $smarty->assign('sesion', $sesion);
         $smarty->assign('canciones',$canciones);
         $smarty->display('templates/canciones.tpl'); 
     }

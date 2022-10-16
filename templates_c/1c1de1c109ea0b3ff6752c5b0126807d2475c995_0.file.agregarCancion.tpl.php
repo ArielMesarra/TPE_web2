@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-15 00:56:01
+/* Smarty version 4.2.1, created on 2022-10-15 16:13:37
   from 'C:\xampp\htdocs\proyectos\TPE_web2\templates\agregarCancion.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6349e901c54de6_07287022',
+  'unifunc' => 'content_634ac011350be6_86188013',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1c1de1c109ea0b3ff6752c5b0126807d2475c995' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPE_web2\\templates\\agregarCancion.tpl',
-      1 => 1665788152,
+      1 => 1665843211,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6349e901c54de6_07287022 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634ac011350be6_86188013 (Smarty_Internal_Template $_smarty_tpl) {
 ?><h2>Agregar cancion</h2>
 <form method="POST">
     <label for="">Nombre</label>
     <input class="form-control" type="text" name="nombreAgregarCancion">
     <label for="">Descripcion</label>
-    <textarea name="descripcionAgregarCancion" id="" cols="30" rows="5"></textarea>
+    <textarea class="form-control" name="descripcionAgregarCancion" id="" cols="30" rows="5"></textarea>
     <label for="">Fecha de estreno</label>
     <input class="form-control" type="date" name="fechaAgregarCancion">
     <select name="artistaAgregarCancion" id="">

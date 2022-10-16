@@ -29,12 +29,7 @@
             return $artistas;
         }
 
-        function borrarCategoria($artistaBorrar){
-            echo '<h1>Estas borrando todas las canciones de este artista!</h1>';
-            $query = $this->db->prepare('DELETE FROM artistas WHERE nombre=?');
-            $query->execute([$artistaBorrar]);
-
-        }
+        
 
         function borrarCancion($cancionBorrar){
             $query = $this->db->prepare('DELETE FROM canciones WHERE nombre=?');
