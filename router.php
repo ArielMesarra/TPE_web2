@@ -13,9 +13,9 @@ require_once './app/controllers/loginController.php';
 require_once './app/controllers/registerController.php';
 require_once './app/controllers/descripcionController.php';
 require_once './app/controllers/BorrarController.php';
-require_once './app/controllers/EditarController.php';
+// require_once './app/controllers/EditarController.php';
 
-require_once './app/controllers/EditarArtistaController.php';
+require_once './app/controllers/EditarController.php';
 
 
 //recibir/leer la accion
@@ -31,9 +31,9 @@ if (!empty($_GET['action'])) {
 $params = explode('/', $accion);
 // $params = ['tabla','asd']
 
-// $taskEditarController = new EditarController();
 
-$taskEditarArtistaController = new EditarArtistaController();
+
+$taskEditarController = new EditarController();
 
 $taskBorrarController = new BorrarController();
 $taskdescripcionController = new DescripcionController();
@@ -69,7 +69,7 @@ switch ($params[0]) {
     case 'accionEditarArtista':
         echo 'ruter editar';
         // var_dump($_POST);
-        $taskEditarArtistaController->editarArtista(); 
+        $taskEditarController->editarArtista(); 
         
         break;
 
@@ -77,8 +77,6 @@ switch ($params[0]) {
         // var_dump($_POST);
         $taskEditarController->editarCancion();
 
-        // $taskEditarController->editarCancion($_POST['editar']);
-        // echo 'editarC';
         
         break;
 
