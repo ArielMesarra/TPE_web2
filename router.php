@@ -58,16 +58,22 @@ switch ($params[0]) {
     case 'logIn':
         $taskloginController->showLogin(); 
         break;
-        
+    case 'signOut':
+        $taskloginController->signOut();
+        break;
+            
+    
+    
+    //acciones:
     case 'accionBorrarArtista':
-            // var_dump($_POST);
-            $taskBorrarController->borrarArtista($_POST['borrar']);
+        // var_dump($_POST);
+        $taskBorrarController->borrarArtista($_POST['borrar']);
+        break;
+    case 'accionBorrarCancion':
+        var_dump($_POST);
+            $taskBorrarController->borrarCancion($_POST['borrar']);
+            
             break;
-            case 'accionBorrarCancion':
-                var_dump($_POST);
-                $taskBorrarController->borrarCancion($_POST['borrar']);
-                
-                break;
                 
     case 'accionEditarArtista':
         echo $_POST['editar'];
@@ -107,11 +113,8 @@ switch ($params[0]) {
         }
         
         break;
+        
 
-
-    case 'signOut':
-        $taskloginController->signOut();
-        break;
 
     case 'agregar':
         if ($_POST["funcion"]=="cancion"){
