@@ -6,12 +6,12 @@ class BorrarArtistaModel{
         $this->db = new PDO('mysql:host=localhost;'.'dbname=biblioteca_bd;charset=utf8', 'root', '');
 
     }
-    function borrarCategoria($artistaBorrar){
+    function borrarArtista($id){
         echo '<h1>ENTRASTE AL MODEL</h1>';
-        $id=$artistaBorrar;
+        // $id=$artistaBorrar;
         var_dump($id);
         $id = (int)$id;
-        var_dump($id);
+        // var_dump($id);
         $query = $this->db->prepare('DELETE FROM artistas WHERE id_artistas=?');
         $query->execute([$id]);
     }

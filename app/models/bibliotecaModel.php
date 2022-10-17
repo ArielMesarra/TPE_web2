@@ -20,6 +20,15 @@
             $canciones = $query->fetchAll(PDO::FETCH_OBJ);
             return $canciones;
         }
+        function getCancionesPorId($id){
+            $query=$this->db->prepare('SELECT c.* FROM canciones AS c WHERE fk_id_artistas=?');
+            $query->execute([$id]);
+                
+                
+            $canciones = $query->fetchAll(PDO::FETCH_OBJ);
+            return $canciones;
+        }
+
 
         function getCancion($id){
 
@@ -42,10 +51,10 @@
 
         
 
-        function borrarCancion($cancionBorrar){
-            $query = $this->db->prepare('DELETE FROM canciones WHERE nombre=?');
-            $query->execute([$cancionBorrar]);
-        }
+        // function borrarCancion($cancionBorrar){
+        //     $query = $this->db->prepare('DELETE FROM canciones WHERE nombre=?');
+        //     $query->execute([$cancionBorrar]);
+        // }
 
         function agregarArtista($artista){
             var_dump($artista);

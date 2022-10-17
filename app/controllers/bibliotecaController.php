@@ -23,6 +23,7 @@ require_once './app/AuthHelper/AuthHelper.php';
             $this->view->showArtistas($artistas, $this->helper->checkLoggedIn());
             // $this->view->mostrarOpciones();
             $canciones=$this->model->getCanciones($_POST['artista']);
+            var_dump($_POST['artista']);
             $this->view->showCanciones($canciones, $this->helper->checkLoggedIn());
 
             if ($this->helper->checkLoggedIn()){

@@ -74,7 +74,12 @@ switch ($params[0]) {
             $taskBorrarController->borrarCancion($_POST['borrar']);
             
             break;
-                
+              
+    case 'accionConfirmarBorrarArtista':
+        // if ($_POST['confirm']=="true")
+        // echo 'true'.$params[1];
+        $taskBorrarController->confirmarBorrarArtista($_POST['confirm'],$params[1]);
+        break;
     case 'accionEditarArtista':
         echo $_POST['editar'];
         // var_dump($_POST);

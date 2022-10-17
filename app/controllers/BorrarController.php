@@ -1,6 +1,7 @@
 <?php
 require_once './app/models/BorrarArtistaModel.php';
 require_once './app/views/BorrarArtistaView.php';
+require_once './app/models/bibliotecaModel.php';
 
 class BorrarController{
     private $model;
@@ -10,22 +11,28 @@ class BorrarController{
     {
         $this->model= new BorrarArtistaModel();
         $this->view= new BorrarArtistaView();
+        $this->bibliotecaModel = new bibliotecaModel();
+
     }
 
-    function borrarArtista($idArtista){
-        echo 'entro';
-        $this->view->confirmarBorrar($idArtista);
+    function borrarArtista($id){
+        $id=(int)$id;
+        var_dump($id);
+        // $id="Pancho";
+        $canciones=$this->bibliotecaModel->getCancionesPorId($id);
+        var_dump($canciones);
+        $this->view->confirmarBorrar($id,$canciones);
 
         // var_dump($_POST);
-        if(isset($_POST['confirm'])){
-            echo 'entraste aca';
-            if($_POST['confirm'] == 'true'){
-                var_dump($_POST['confirm']);
-                echo '<h1>'.$artistaBorrar.'</h1>';
-                $this->model->borrarCategoria($_POST['artista']);
-            }
-            header('location: '.BIBLIOTECA);
-        }
+        // if(isset($_POST['confirm'])){
+        //     echo 'entraste aca';
+        //     if($_POST['confirm'] == 'true'){
+        //         var_dump($_POST['confirm']);
+        //         echo '<h1>'.$artistaBorrar.'</h1>';
+        //         $this->model->borrarCategoria($_POST['artista']);
+        //     }
+        //     header('location: '.BIBLIOTECA);
+        // }
 
     }
     function borrarCancion($idCancion){
@@ -43,6 +50,14 @@ class BorrarController{
             header('location: '.BIBLIOTECA);
         // }
 
+    }
+    function confirmarBorrarArtista($flag,$id){
+        if ($flag=="true"){
+            $this->model->borrarArtista($id);
+        }
+        header('location: '.BIBLIOTECA);
+
+        // echo $flag.$id;
     }
 
 
