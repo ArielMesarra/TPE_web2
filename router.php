@@ -86,10 +86,14 @@ switch ($params[0]) {
         // echo $params[0];
         // var_dump($_GET);
         
-        echo $params[1];
+        // echo $params[1];
         // echo $params[2];
         if ($params[1]=="Editar"){
             $taskEditarController->confirmaEditarCancion($params[2],$_POST);
+
+        }else{
+            echo 'va bien';
+            $taskAgregarController->confirmaAgregaCancion($_POST);
 
         }
         break;

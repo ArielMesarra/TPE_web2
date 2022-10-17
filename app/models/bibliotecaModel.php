@@ -47,15 +47,6 @@
             $query->execute([$cancionBorrar]);
         }
 
-        function agregarCancion($cancion){
-            $nombreCancion=$cancion['nombreAgregarCancion'];
-            $descripcionCancion=$cancion['descripcionAgregarCancion'];
-            $fechaCancion=$cancion['fechaAgregarCancion'];
-            $artistaCancion=$cancion['artistaAgregarCancion'];
-            $query = $this->db->prepare('INSERT INTO canciones(nombre, descripcion, fecha_estreno, fk_id_artistas) VALUES (?,?,?,?)');
-            $query->execute([$nombreCancion, $descripcionCancion, $fechaCancion, $artistaCancion]);  
-        }
-        
         function agregarArtista($artista){
             var_dump($artista);
             $nombreArtista=$artista['nombreArtistaAgregar'];

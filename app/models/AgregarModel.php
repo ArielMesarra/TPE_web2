@@ -18,5 +18,16 @@
             $query->execute([$nombre, $lugar, $integrantes]);
             // echo '<h1>Ento en el agregar MODEL</h1>';
         }
+
+
+        function agregarCancion($cancion){
+            $nombre=$cancion['nombre'];
+            $descripcion=$cancion['descripcion'];
+            $fecha=$cancion['fecha'];
+            $artista=$cancion['artista'];
+            $query = $this->db->prepare('INSERT INTO canciones(nombre, descripcion, fecha_estreno, fk_id_artistas) VALUES (?,?,?,?)');
+            $query->execute([$nombre, $descripcion, $fecha, $artista]);  
+        }
+        
  } 
 ?>  
