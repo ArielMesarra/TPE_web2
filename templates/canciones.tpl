@@ -34,7 +34,7 @@
                         <button type="submit" name="editar" value="{$cancion->id_canciones}">Editar</button>
                     </td>
                 </form>
-                <form action="accionBorrarCancion" method="POST">
+                <form action="accion/BorrarCancion" method="POST">
                     <td>
                         <button type="submit" name="borrar" value="{$cancion->id_canciones}">Borrar</button>
                     </td>
