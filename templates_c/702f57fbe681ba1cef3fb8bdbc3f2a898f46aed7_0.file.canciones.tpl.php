@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-17 18:15:53
+/* Smarty version 4.2.1, created on 2022-10-17 18:20:00
   from '/opt/lampp/htdocs/TPE_web2/templates/canciones.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634d7fb9d6ea66_88269185',
+  'unifunc' => 'content_634d80b075dc52_94283096',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '702f57fbe681ba1cef3fb8bdbc3f2a898f46aed7' => 
     array (
       0 => '/opt/lampp/htdocs/TPE_web2/templates/canciones.tpl',
-      1 => 1666023350,
+      1 => 1666023596,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_634d7fb9d6ea66_88269185 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634d80b075dc52_94283096 (Smarty_Internal_Template $_smarty_tpl) {
 ?><table class="table">
 
     <thead>
@@ -61,7 +61,7 @@ $_smarty_tpl->tpl_vars['cancion']->do_else = false;
 ">Ver mas</a>
             </td>
             <?php if ($_smarty_tpl->tpl_vars['sesion']->value == true) {?>
-                <form action="accionEditarCancion" method="POST">
+                <form action="accion/EditarCancion" method="POST">
                     <td>
                         <button type="submit" name="editar" value="<?php echo $_smarty_tpl->tpl_vars['cancion']->value->id_canciones;?>
 ">Editar</button>

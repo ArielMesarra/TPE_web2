@@ -62,21 +62,24 @@ switch ($params[0]) {
             $taskBorrarController->borrarCancion($_POST['borrar']);
             break;
                   
+        case 'ConfirmarBorrarArtista':
+            $taskBorrarController->confirmarBorrarArtista($_POST['confirm'],$params[2]);
+            break;
+            
+        case 'EditarArtista':
+            $taskEditarController->editarArtista($_POST['editar'],$params[2]); 
+            break;
+        
+        case 'EditarCancion':
+            $taskEditarController->editarCancion($_POST['editar']);
+            break;
+        
         }
         break;
         
 
-    case 'accionConfirmarBorrarArtista':
-        $taskBorrarController->confirmarBorrarArtista($_POST['confirm'],$params[1]);
-        break;
 
-    case 'accionEditarArtista':
-        $taskEditarController->editarArtista($_POST['editar'],$params[1]); 
-        break;
 
-    case 'accionEditarCancion':
-        $taskEditarController->editarCancion($_POST["editar"]);
-        break;
 
     case 'accionProcederCancion':
         if ($params[1]=="Editar"){

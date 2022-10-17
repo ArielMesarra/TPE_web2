@@ -1,4 +1,4 @@
-<form method="POST" action="accionConfirmarBorrarArtista/{$id}">
+<form method="POST" action="accion/ConfirmarBorrarArtista/{$id}">
     <h1>¿Estas seguro que queres borrar ese artista?</h1>
     <h2>¡Vas a borrar todas estas canciones de este artista!</h2>
 

@@ -21,7 +21,7 @@
             {$artista->integrantes_num}
         </td>
         {if $sesion eq true}
-        <form action="accionEditarArtista" method="POST">
+        <form action="accion/EditarArtista" method="POST">
             <td>
                 <button type="submit" name="editar" value="{$artista->id_artistas}">Editar</button>
             </td>

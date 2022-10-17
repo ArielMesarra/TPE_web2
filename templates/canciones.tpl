@@ -29,7 +29,7 @@
                 <a href="cancion/{$cancion->id_canciones}">Ver mas</a>
             </td>
             {if $sesion eq true}
-                <form action="accionEditarCancion" method="POST">
+                <form action="accion/EditarCancion" method="POST">
                     <td>
                         <button type="submit" name="editar" value="{$cancion->id_canciones}">Editar</button>
                     </td>
