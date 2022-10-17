@@ -11,6 +11,10 @@ class AuthHelper{
         }
         return $_SESSION["logueado"];    
     }
+    function yaEstas(){
+        echo '<h2>Ya estas logueado</h2>';
+
+    }
 
 }
 

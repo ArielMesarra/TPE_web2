@@ -16,7 +16,7 @@ class loginController{
     function showLogin(){
         session_start();
         if($this->helper->checkLoggedIn()){
-            echo "<h2>Ya estas logueado</h2>";
+            $this->helper->yaEstas();
         }
         else{
             $this->view->showFormLogin();
