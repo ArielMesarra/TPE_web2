@@ -14,6 +14,8 @@ require_once './app/controllers/descripcionController.php';
 require_once './app/controllers/BorrarController.php';
 require_once './app/controllers/EditarController.php';
 require_once './app/controllers/AgregarController.php';
+require_once './app/AuthHelper/AuthHelper.php';
+
 
 
 
@@ -26,6 +28,9 @@ $taskbibliotecaController = new bibliotecaController();
 $taskregisterController = new registerController();
 $taskloginController = new loginController();
 $taskAgregarController = new AgregarController();
+$helper=new AuthHelper();
+
+
 $taskStaticController->mostrarHeader();
 
 
@@ -51,57 +56,54 @@ switch ($params[0]) {
             
     
     
-    //acciones:
     case 'accion':
-        switch ($params[1]){
-        case 'BorrarArtista':
-            $taskBorrarController->borrarArtista($_POST['borrar']);
-            break;
+        if ($this->helper->checkLoggedIn()){
 
-        case 'BorrarCancion':
-            $taskBorrarController->borrarCancion($_POST['borrar']);
-            break;
-                  
-        case 'ConfirmarBorrarArtista':
-            $taskBorrarController->confirmarBorrarArtista($_POST['confirm'],$params[2]);
-            break;
+            switch ($params[1]){
+            case 'BorrarArtista':
+                $taskBorrarController->borrarArtista($_POST['borrar']);
+                break;
+
+            case 'BorrarCancion':
+                $taskBorrarController->borrarCancion($_POST['borrar']);
+                break;
+                    
+            case 'ConfirmarBorrarArtista':
+                $taskBorrarController->confirmarBorrarArtista($_POST['confirm'],$params[2]);
+                break;
+                
+            case 'EditarArtista':
+                $taskEditarController->editarArtista($_POST['editar'],$params[2]); 
+                break;
             
-        case 'EditarArtista':
-            $taskEditarController->editarArtista($_POST['editar'],$params[2]); 
-            break;
-        
-        case 'EditarCancion':
-            $taskEditarController->editarCancion($_POST['editar']);
-            break;
-        
-        case 'ProcederCancion':
-            if ($params[1]=="Editar"){
-                $taskEditarController->confirmaEditarCancion($params[3],$_POST);
-            }else{
-                $taskAgregarController->confirmaAgregaCancion($_POST);
-            }
-            break;
-        case 'ProcederEditarArtista':
-            if ($params[2]=="Editar") {
-                $taskEditarController->editarArtistaProceder($params[3]);
-            }else{
-                $taskAgregarController->confirmaAgregarArtista($_POST);
-            }
-            break;
-        case 'agregar':
-            if ($_POST["funcion"]=="cancion"){
-                $taskAgregarController->cancion();
-            }else{
-                $taskAgregarController->artista();
+            case 'EditarCancion':
+                $taskEditarController->editarCancion($_POST['editar']);
+                break;
+            
+            case 'ProcederCancion':
+                if ($params[1]=="Editar"){
+                    $taskEditarController->confirmaEditarCancion($params[3],$_POST);
+                }else{
+                    $taskAgregarController->confirmaAgregaCancion($_POST);
+                }
+                break;
+            case 'ProcederEditarArtista':
+                if ($params[2]=="Editar") {
+                    $taskEditarController->editarArtistaProceder($params[3]);
+                }else{
+                    $taskAgregarController->confirmaAgregarArtista($_POST);
+                }
+                break;
+            case 'agregar':
+                if ($_POST["funcion"]=="cancion"){
+                    $taskAgregarController->cancion();
+                }else{
+                    $taskAgregarController->artista();
+                }
+                break;
             }
             break;
         }
-        break;
-        
-
-
-
-
 
 
 
