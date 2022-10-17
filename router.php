@@ -57,7 +57,7 @@ switch ($params[0]) {
     
     
     case 'accion':
-        if ($this->helper->checkLoggedIn()){
+        if ($helper->checkLoggedIn()){
 
             switch ($params[1]){
             case 'BorrarArtista':
