@@ -1,12 +1,14 @@
 <?php
 require_once './libs/smarty/Smarty.class.php';
 class EditarView{
-
-    function mostrarEditarArtista($artista){
+    //modo puede ser editar o agregar
+    function mostrarEditarArtista($artista,$modo){
             // echo 'view';
             var_dump($artista);
         $smarty = new Smarty();
         $smarty->assign("artista",$artista);
+        $smarty->assign("modo",$modo);
+
         $smarty->display('templates/editarArtista.tpl');
     }
 

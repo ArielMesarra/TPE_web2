@@ -19,7 +19,7 @@ require_once './app/models/EditarModel.php';
 
             $artista=$this->bibliotecaModel->getArtista($id);
             
-            $this->view->mostrarEditarArtista($artista);
+            $this->view->mostrarEditarArtista($artista,"Editar");
         }
 
         function editarArtistaProceder($id){

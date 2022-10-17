@@ -82,9 +82,12 @@ switch ($params[0]) {
         break;
 
     case 'accionProcederEditarArtista':
-    
-        $taskEditarController->editarArtistaProceder($params[1]);
-
+        if ($params[1]=="Editar") {
+            $taskEditarController->editarArtistaProceder($params[2]);
+        }else{
+            // echo 'llego bien al ruter';
+            $taskAgregarController->confirmaAgregarArtista($_POST);
+        }
         
         break;
 
