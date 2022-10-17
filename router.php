@@ -6,7 +6,7 @@ define('LOGIN', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] .
 define('BIBLIOTECA', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/biblioteca');
 
 require_once './app/controllers/InicioController.php';
-require_once './app/views/staticView.php';
+require_once './app/controllers/StaticController.php';
 require_once './app/controllers/bibliotecaController.php';
 require_once './app/controllers/loginController.php';
 require_once './app/controllers/registerController.php';
@@ -15,11 +15,11 @@ require_once './app/controllers/BorrarController.php';
 require_once './app/controllers/EditarController.php';
 require_once './app/controllers/AgregarController.php';
 
-$staticView = new StaticView();
-$staticView->showHeader();
 
 $accion = $_GET['action'];
 $params = explode('/', $accion);
+
+$taskStaticController = new StaticController();
 
 $taskInicioController = new InicioController();
 $taskEditarController = new EditarController();
@@ -30,6 +30,9 @@ $taskregisterController = new registerController();
 $taskloginController = new loginController();
 $taskAgregarController = new AgregarController();
 
+$taskStaticController->mostrarHeader();
+// $staticView = new StaticView();
+// $staticView->showHeader();
 
 switch ($params[0]) {
     case 'biblioteca':
@@ -101,6 +104,6 @@ switch ($params[0]) {
         $taskInicioController->mostrar();
         break;
 }
-$staticView->showFooter();
+$taskStaticController->mostrarFooter();
 
 
