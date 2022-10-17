@@ -21,9 +21,16 @@
             return $canciones;
         }
         function getCancionesPorId($id){
-            $query=$this->db->prepare('SELECT c.* FROM canciones AS c WHERE fk_id_artistas=?');
-            $query->execute([$id]);
-                
+            if($id == "*"){
+                $query=$this->db->prepare('SELECT c.*,a.nombre AS nombreDeArtista FROM canciones AS c INNER JOIN artistas AS a ON c.fk_id_artistas = a.id_artistas');
+                $query->execute();
+            }
+            else{
+
+    
+                $query=$this->db->prepare('SELECT c.*,a.nombre as nombreDeArtista FROM canciones AS c INNER JOIN artistas AS a ON c.fk_id_artistas = a.id_artistas WHERE fk_id_artistas=?');
+                $query->execute([$id]);
+            }      
                 
             $canciones = $query->fetchAll(PDO::FETCH_OBJ);
             return $canciones;

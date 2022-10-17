@@ -16,14 +16,15 @@ require_once './app/AuthHelper/AuthHelper.php';
         function showBiblioteca(){
             session_start();
             $artistas=$this->model->getArtistas();
-            if(!isset($_POST['artista'])){
-                $_POST['artista']='*';
-            }
-            
             $this->view->showArtistas($artistas, $this->helper->checkLoggedIn());
+            $this->view->elegirArtista($artistas);
+            // echo 'opc'.$_POST['opcionElegida'];
+            if(!isset($_POST['opcionElegida']))  $_POST['opcionElegida']='*';
+            // }
+            
             // $this->view->mostrarOpciones();
-            $canciones=$this->model->getCanciones($_POST['artista']);
-            var_dump($_POST['artista']);
+            $canciones=$this->model->getCancionesPorId($_POST['opcionElegida']);
+            // var_dump($_POST['artista']);
             $this->view->showCanciones($canciones, $this->helper->checkLoggedIn());
 
             if ($this->helper->checkLoggedIn()){

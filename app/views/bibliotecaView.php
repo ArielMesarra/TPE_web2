@@ -8,6 +8,12 @@ class bibliotecaView{
         $smarty->assign('artistas',$artistas);
         $smarty->display('templates/artistas.tpl'); 
     }
+    function elegirArtista($artistas){
+        $smarty = new Smarty();
+        $smarty->assign('artistas', $artistas);
+        $smarty->display('templates/elegir.tpl'); 
+var_dump($artistas);
+    }
     
     function showCanciones($canciones, $sesion){
         $smarty = new Smarty();
