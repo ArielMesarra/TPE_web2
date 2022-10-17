@@ -1,31 +1,25 @@
 <?php
+    class EditarModel{
 
-class EditarModel{
-    private $db;
-    function __construct(){
-        $this->db = new PDO('mysql:host=localhost;'.'dbname=biblioteca_bd;charset=utf8', 'root', '');
+        private $db;
+        function __construct()
+        {
+            $this->db = new PDO('mysql:host=localhost;'.'dbname=biblioteca_bd;charset=utf8', 'root', '');
+        }
 
-    }
-    // function borrarCategoria($artistaBorrar){
-    //     echo '<h1>ENTRASTE AL MODEL</h1>';
-    //     $id=$artistaBorrar;
-    //     var_dump($id);
-    //     $id = (int)$id;
-    //     var_dump($id);
-    //     $query = $this->db->prepare('DELETE FROM artistas WHERE id_artistas=?');
-    //     $query->execute([$id]);
-    // }
-
-    // function borrarCancion($id){
-    //     // echo '<h1>ENTRASTE AL MODEL</h1>';
-    //     $id=(int)$id;
-    //     // echo $id;
-    //     $query=$this->db->prepare('DELETE FROM canciones WHERE id_canciones=?');
-         
-    //     // $query = $this->db->prepare('DELETE FROM artistas WHERE id_artistas=?');
-    //     $query->execute([$id]);
-    // }
-
-}
-
-?>
+        function editarCancion($datos){
+            // var_dump($datos);
+            $id=$datos['id'];
+            $nombre = $datos['nombre'];
+            $descripcion = $datos['descripcion'];
+            $fecha = $datos['fecha'];
+            $idArtista = (int)$datos['artista'];
+            $query = $this->db->prepare('UPDATE canciones SET nombre=? ,descripcion=? ,fecha_estreno=?, fk_id_artistas=? WHERE id_canciones=?');
+            echo '-----';
+            // echo $idArtista.' id artsi';
+            echo $id.' id';
+            
+            $query->execute([$nombre,$descripcion,$fecha,$idArtista, $id]);
+        }
+    } 
+?>  

@@ -75,7 +75,7 @@ switch ($params[0]) {
 
     case 'accionEditarCancion':
         // var_dump($_POST);
-        $taskEditarController->editarCancion();
+        $taskEditarController->editarCancion($_POST["editar"]);
 
         
         break;

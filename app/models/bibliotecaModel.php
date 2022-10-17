@@ -20,6 +20,17 @@
             $canciones = $query->fetchAll(PDO::FETCH_OBJ);
             return $canciones;
         }
+
+        function getCancion($id){
+
+            $query=$this->db->prepare('SELECT c.* FROM canciones AS c WHERE id_canciones=?');
+            $query->execute([$id]);
+            $cancion = $query->fetch(PDO::FETCH_OBJ);
+            return $cancion;
+            // echo 'entro'.$id;
+            // echo '-----';
+        }
+        
         
         function getArtistas(){
             // $query = $this->db->prepare('SELECT c.nombre, c.descripcion, c.fecha_estreno, c.fk_id_artistas FROM canciones AS c');

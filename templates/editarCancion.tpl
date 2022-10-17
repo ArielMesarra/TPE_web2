@@ -1,17 +1,26 @@
 <h2>Editar cancion</h2>
 
-{* <form method="POST">
-    <select name="artistaId" value="">Artista
-        {foreach from = $artistas item = $artista}
-        <option value="{$artista->id_artistas}">{$artista->nombre}</option>
-        {/foreach}
-    </select>
+ <form method="POST">
+    <input class="nover" type="text" name="id" value="{$cancion->id_canciones}">
+    
+    
     <label for="">Nombre</label>
-    <input class="form-control" type="text" name="nombreArtistaEditar">
-    <label for="">Lugar</label>
-    <input class="form-control" type="text" name="lugarArtistaEditar">
-    <label for="">Numero de integrantes</label>
-    <input class="form-control" type="number" name="integrantesArtistaEditar">
+    <input class="form-control" type="text" name="nombre" value="{$cancion->nombre}">
+ 
+    <label for="">Descripcion</label>
+    <input class="form-control" type="text" name="descripcion" value="{$cancion->descripcion}">
+ 
+    <label for="">Fecha de Estreno</label>
+    <input class="form-control" type="date" name="fecha" value="{$cancion->fecha_estreno}">
+
+    <select name="artista" id="" value="1">
+    {foreach from = $artistas item = $artista}
+        <option value="{$artista->id_artistas}">{$artista->nombre}
+            
+        </option>
+    {/foreach}
+    </select>
+    
     <button type="submit">Editar</button>
 </form>
- *}
+ 

@@ -1,6 +1,6 @@
 <?php
 require_once './libs/smarty/Smarty.class.php';
-class EditarArtistaView{
+class EditarView{
 
     function mostrarEditarArtista(){
             echo 'view';
@@ -9,10 +9,12 @@ class EditarArtistaView{
         $smarty->display('templates/editarArtista.tpl');
     }
 
-    function mostrarEditarCancion(){
-        echo 'view cancion';
+    function mostrarEditarCancion($cancion,$artistas){
+        // echo 'view cancion';
     $smarty = new Smarty();
-    // $smarty->assign("artistas",$artistaBorrar);
+    $smarty->assign("cancion",$cancion);
+    $smarty->assign("artistas",$artistas);
+
     $smarty->display('templates/editarCancion.tpl');
 }
 

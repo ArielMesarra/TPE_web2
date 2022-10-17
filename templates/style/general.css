@@ -1,0 +1,6 @@
+.nover {
+    /* display: none; */
+    visibility: hidden;
+    color: brown;
+    background-color: blueviolet;
+}
