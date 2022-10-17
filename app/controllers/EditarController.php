@@ -16,17 +16,20 @@ require_once './app/models/EditarModel.php';
         }
 
         function editarArtista($id){
-            // echo 'entro  controller';
 
             $artista=$this->bibliotecaModel->getArtista($id);
-            // echo 'paso model controller';
-// var_dump($artista);
             
             $this->view->mostrarEditarArtista($artista);
         }
 
-        function editarCancionProceder($id){
+        function editarArtistaProceder($id){
             echo $id;
+            // var_dump($_POST);
+            $this->editarModel->editarArtista($id,$_POST);
+            header('location: '.BIBLIOTECA);
+
+
+
         }
         function editarCancion($id){
             // var_dump($id);

@@ -76,16 +76,7 @@
             return $artista;
         }
 
-        function editarArtista($datos){
-            $nombre=$datos['nombreArtistaEditar'];
-            $lugar=$datos['lugarArtistaEditar'];
-            $integrantes=$datos['integrantesArtistaEditar'];
-            $id=$datos['artistaId'];
-            // $query = $this->db->prepare('UPDATE nombre'.'SET nombre=? WHERE id_artistas=?');
-            $query = $this->db->prepare('UPDATE artistas SET nombre=? ,lugar=? ,integrantes_num=? WHERE id_artistas=? ');
-            $query->execute([$nombre, $lugar, $integrantes, $id]);
-            echo '<h1>Ento en el editar MODEL</h1>';
-        }
+       
 
         function editarCancion($datos){
             $nombre = $datos['nombreCancionEditar'];

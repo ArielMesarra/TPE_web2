@@ -13,9 +13,10 @@ require_once './app/controllers/loginController.php';
 require_once './app/controllers/registerController.php';
 require_once './app/controllers/descripcionController.php';
 require_once './app/controllers/BorrarController.php';
-// require_once './app/controllers/EditarController.php';
+
 
 require_once './app/controllers/EditarController.php';
+require_once './app/controllers/AgregarController.php';
 
 
 //recibir/leer la accion
@@ -40,6 +41,8 @@ $taskdescripcionController = new DescripcionController();
 $taskbibliotecaController = new bibliotecaController();
 $taskregisterController = new registerController();
 $taskloginController = new loginController();
+$taskAgregarController = new AgregarController();
+
 
 switch ($params[0]) {
     case 'biblioteca':
@@ -56,7 +59,7 @@ switch ($params[0]) {
         $taskloginController->showLogin(); 
         break;
         
-        case 'accionBorrarArtista':
+    case 'accionBorrarArtista':
             // var_dump($_POST);
             $taskBorrarController->borrarArtista($_POST['borrar']);
             break;
@@ -80,7 +83,7 @@ switch ($params[0]) {
 
     case 'accionProcederEditarArtista':
     
-        $taskEditarController->editarCancionProceder($params[1]);
+        $taskEditarController->editarArtistaProceder($params[1]);
 
         
         break;
@@ -89,6 +92,18 @@ switch ($params[0]) {
     case 'signOut':
         $taskloginController->signOut();
         break;
+
+    case 'agregar':
+        if ($_POST["funcion"]=="cancion"){
+            echo 'agregar cancion';
+            $taskAgregarController->cancion();
+
+        }else{
+            echo 'agregar artista';
+            $taskAgregarController->artista();
+        }
+        break;
+
     case 'inicio':
     default:
         echo '<h1>Inicio</h1>';
