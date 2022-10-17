@@ -1,7 +1,7 @@
 <h2>Editar cancion</h2>
 
  <form method="POST">
-    <input class="nover" type="text" name="id" value="{$cancion->id_canciones}">
+    <input type="" name="id" value="{$cancion->id_canciones}">
     
     
     <label for="">Nombre</label>

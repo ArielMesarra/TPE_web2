@@ -67,15 +67,20 @@ switch ($params[0]) {
                 break;
                 
     case 'accionEditarArtista':
-        echo 'ruter editar';
+        echo $_POST['editar'];
         // var_dump($_POST);
-        $taskEditarController->editarArtista(); 
+        $taskEditarController->editarArtista($_POST['editar'],$params[1]); 
         
         break;
 
     case 'accionEditarCancion':
         // var_dump($_POST);
         $taskEditarController->editarCancion($_POST["editar"]);
+        break;
+
+    case 'accionProcederEditarArtista':
+    
+        $taskEditarController->editarCancionProceder($params[1]);
 
         
         break;

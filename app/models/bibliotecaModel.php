@@ -67,9 +67,12 @@
         }
 
         function getArtista($id){
+            echo 'entro model';
+            echo $id;
             $query = $this->db->prepare('SELECT a.* FROM artistas AS a WHERE id_artistas=?');
             $query->execute([$id]);
-            $artista = $query->fetchAll(PDO::FETCH_OBJ);
+            $artista = $query->fetch(PDO::FETCH_OBJ);
+        //    $artista="hol";
             return $artista;
         }
 

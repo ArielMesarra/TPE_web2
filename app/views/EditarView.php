@@ -2,10 +2,11 @@
 require_once './libs/smarty/Smarty.class.php';
 class EditarView{
 
-    function mostrarEditarArtista(){
-            echo 'view';
+    function mostrarEditarArtista($artista){
+            // echo 'view';
+            var_dump($artista);
         $smarty = new Smarty();
-        // $smarty->assign("artistas",$artistaBorrar);
+        $smarty->assign("artista",$artista);
         $smarty->display('templates/editarArtista.tpl');
     }
 
