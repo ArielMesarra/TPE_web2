@@ -24,10 +24,14 @@ require_once './app/views/EditarView.php';
             $this->view->mostrarEditarArtista("","Agregar");
         }
         function confirmaAgregarArtista($datos){
+            $yaExiste=$this->bibliotecaModel->yaExiste($datos['nombre']);
+            if ($datos['nombre']==$yaExiste->nombre){
+                echo 'ya existe un artista llamado '.$datos['nombre'];
+            }else{
+                
             $this->model->agregarArtista($datos);
-            // var_dump($datos);
             header('location: '.BIBLIOTECA);
-
+            }
         }
 
 

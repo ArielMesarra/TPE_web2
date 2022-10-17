@@ -52,6 +52,17 @@
             return $artista;
         }
 
+        function yaExiste($nombre){
+            $query = $this->db->prepare('SELECT a.nombre FROM artistas AS a WHERE nombre=?');
+            $query->execute([$nombre]);
+            $artista = $query->fetch(PDO::FETCH_OBJ);
+            return $artista;
+
+
+
+
+        }
+
 
     } 
 ?>  
