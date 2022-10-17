@@ -16,11 +16,8 @@ require_once './app/controllers/EditarController.php';
 require_once './app/controllers/AgregarController.php';
 
 
-$accion = $_GET['action'];
-$params = explode('/', $accion);
 
 $taskStaticController = new StaticController();
-
 $taskInicioController = new InicioController();
 $taskEditarController = new EditarController();
 $taskBorrarController = new BorrarController();
@@ -29,11 +26,11 @@ $taskbibliotecaController = new bibliotecaController();
 $taskregisterController = new registerController();
 $taskloginController = new loginController();
 $taskAgregarController = new AgregarController();
-
 $taskStaticController->mostrarHeader();
-// $staticView = new StaticView();
-// $staticView->showHeader();
 
+
+$accion = $_GET['action'];
+$params = explode('/', $accion);
 switch ($params[0]) {
     case 'biblioteca':
         echo '<h1>Biblioteca</h1>';

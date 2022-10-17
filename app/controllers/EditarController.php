@@ -32,28 +32,14 @@ require_once './app/models/EditarModel.php';
 
         }
         function editarCancion($id){
-            // var_dump($id);
             $id=(int)$id;
             $cancion=$this->bibliotecaModel->getCancion($id);
             $artistas=$this->bibliotecaModel->getArtistas();
-            echo 'edotar cancion controller';
-            // var_dump($cancion);
             $this->view->mostrarEditarCancion($cancion,$artistas,"Editar");
-            // var_dump($_POST);
-            // if (!empty($_POST['nombre'])&& !empty($_POST['descripcion'])){
-            //     echo 'editando......';
-            //     // var_dump($_POST);
-
-            //     $this->editarModel->editarCancion($_POST);
-            // header('location: '.BIBLIOTECA);
-
-            // }
-            
-            
         }
+
         function confirmaEditarCancion($id,$datos){
-            echo 'llego a confirmar';
-                      $this->editarModel->editarCancion($id,$_POST);
+            $this->editarModel->editarCancion($id,$_POST);
             header('location: '.BIBLIOTECA);
        
         }
