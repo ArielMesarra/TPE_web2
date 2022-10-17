@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-16 23:53:35
+/* Smarty version 4.2.1, created on 2022-10-17 18:15:00
   from '/opt/lampp/htdocs/TPE_web2/templates/artistas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634c7d5f54c714_80437589',
+  'unifunc' => 'content_634d7f84305317_66383113',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '815ff19638060d7792dfd43ddd814304ba8bff7a' => 
     array (
       0 => '/opt/lampp/htdocs/TPE_web2/templates/artistas.tpl',
-      1 => 1665957202,
+      1 => 1666023290,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_634c7d5f54c714_80437589 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634d7f84305317_66383113 (Smarty_Internal_Template $_smarty_tpl) {
 ?><table class="table">
     <thead>
         <td>
@@ -58,7 +58,7 @@ $_smarty_tpl->tpl_vars['artista']->do_else = false;
 ">Editar</button>
             </td>
         </form>
-        <form action="accionBorrarArtista" method="POST">
+        <form action="accion/BorrarArtista" method="POST">
             <td>
                 <button type="submit" name="borrar" value="<?php echo $_smarty_tpl->tpl_vars['artista']->value->id_artistas;?>
 ">Borrar</button>

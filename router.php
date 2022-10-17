@@ -52,9 +52,15 @@ switch ($params[0]) {
     
     
     //acciones:
-    case 'accionBorrarArtista':
-        $taskBorrarController->borrarArtista($_POST['borrar']);
+    case 'accion':
+        switch ($params[1]){
+        case 'BorrarArtista':
+            $taskBorrarController->borrarArtista($_POST['borrar']);
+            break;
+
+        }
         break;
+        
 
         case 'accionBorrarCancion':
         $taskBorrarController->borrarCancion($_POST['borrar']);

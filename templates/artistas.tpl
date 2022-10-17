@@ -26,7 +26,7 @@
                 <button type="submit" name="editar" value="{$artista->id_artistas}">Editar</button>
             </td>
         </form>
-        <form action="accionBorrarArtista" method="POST">
+        <form action="accion/BorrarArtista" method="POST">
             <td>
                 <button type="submit" name="borrar" value="{$artista->id_artistas}">Borrar</button>
             </td>
