@@ -51,6 +51,12 @@ require_once './app/models/EditarModel.php';
             
             
         }
+        function confirmaEditarCancion($id,$datos){
+            echo 'llego a confirmar';
+                      $this->editarModel->editarCancion($id,$_POST);
+            header('location: '.BIBLIOTECA);
+       
+        }
 
     }
     

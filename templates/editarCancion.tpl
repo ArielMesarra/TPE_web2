@@ -1,7 +1,7 @@
 <h2>{$modo} cancion</h2>
 
- <form method="POST">
-    <input type="" name="id" value="{$cancion->id_canciones}">
+ <form action="accionProcederCancion/{$modo}/{$cancion->id_canciones}" method="POST">
+    {* <input type="" name="id" value="{$cancion->id_canciones}"> *}
     
     
     <label for="">Nombre</label>

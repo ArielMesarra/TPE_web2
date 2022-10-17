@@ -18,9 +18,9 @@
             // echo '<h1>Ento en el editar MODEL</h1>';
         }
 
-        function editarCancion($datos){
+        function editarCancion($id,$datos){
             // var_dump($datos);
-            $id=$datos['id'];
+            // $id=$datos['id'];
             $nombre = $datos['nombre'];
             $descripcion = $datos['descripcion'];
             $fecha = $datos['fecha'];

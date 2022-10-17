@@ -81,6 +81,19 @@ switch ($params[0]) {
         $taskEditarController->editarCancion($_POST["editar"]);
         break;
 
+    case 'accionProcederCancion':
+        echo 'proc cancion \n';
+        // echo $params[0];
+        // var_dump($_GET);
+        
+        echo $params[1];
+        // echo $params[2];
+        if ($params[1]=="Editar"){
+            $taskEditarController->confirmaEditarCancion($params[2],$_POST);
+
+        }
+        break;
+
     case 'accionProcederEditarArtista':
         if ($params[1]=="Editar") {
             $taskEditarController->editarArtistaProceder($params[2]);
