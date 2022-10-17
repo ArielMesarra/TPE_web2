@@ -74,6 +74,27 @@ switch ($params[0]) {
             $taskEditarController->editarCancion($_POST['editar']);
             break;
         
+        case 'ProcederCancion':
+            if ($params[1]=="Editar"){
+                $taskEditarController->confirmaEditarCancion($params[3],$_POST);
+            }else{
+                $taskAgregarController->confirmaAgregaCancion($_POST);
+            }
+            break;
+        case 'ProcederEditarArtista':
+            if ($params[2]=="Editar") {
+                $taskEditarController->editarArtistaProceder($params[3]);
+            }else{
+                $taskAgregarController->confirmaAgregarArtista($_POST);
+            }
+            break;
+        case 'agregar':
+            if ($_POST["funcion"]=="cancion"){
+                $taskAgregarController->cancion();
+            }else{
+                $taskAgregarController->artista();
+            }
+            break;
         }
         break;
         
@@ -81,29 +102,8 @@ switch ($params[0]) {
 
 
 
-    case 'accionProcederCancion':
-        if ($params[1]=="Editar"){
-            $taskEditarController->confirmaEditarCancion($params[2],$_POST);
-        }else{
-            $taskAgregarController->confirmaAgregaCancion($_POST);
-        }
-        break;
 
-    case 'accionProcederEditarArtista':
-        if ($params[1]=="Editar") {
-            $taskEditarController->editarArtistaProceder($params[2]);
-        }else{
-            $taskAgregarController->confirmaAgregarArtista($_POST);
-        }
-        break;
 
-    case 'agregar':
-        if ($_POST["funcion"]=="cancion"){
-            $taskAgregarController->cancion();
-        }else{
-            $taskAgregarController->artista();
-        }
-        break;
 
     case 'inicio':
     default:

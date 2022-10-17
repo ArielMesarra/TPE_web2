@@ -1,6 +1,6 @@
 <h2>{$modo} artistas</h2>
-{* {$artista->nombre} *}
-<form action="accionProcederEditarArtista/{$modo}/{$artista->id_artistas}" method="POST">
+
+<form action="accion/ProcederEditarArtista/{$modo}/{$artista->id_artistas}" method="POST">
     <label for="">Nombre</label>
     <input class="form-control" type="text" name="nombre" value="{$artista->nombre}">
     <label for="">Lugar</label>

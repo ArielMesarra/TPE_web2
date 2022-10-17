@@ -1,6 +1,6 @@
 <h2>{$modo} cancion</h2>
 
- <form action="accionProcederCancion/{$modo}/{$cancion->id_canciones}" method="POST">
+ <form action="accion/ProcederCancion/{$modo}/{$cancion->id_canciones}" method="POST">
     {* <input type="" name="id" value="{$cancion->id_canciones}"> *}
     
     
