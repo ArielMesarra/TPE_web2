@@ -12,11 +12,13 @@ class EditarView{
         $smarty->display('templates/editarArtista.tpl');
     }
 
-    function mostrarEditarCancion($cancion,$artistas){
+    function mostrarEditarCancion($cancion,$artistas,$modo){
         // echo 'view cancion';
     $smarty = new Smarty();
     $smarty->assign("cancion",$cancion);
     $smarty->assign("artistas",$artistas);
+    $smarty->assign("modo",$modo);
+
 
     $smarty->display('templates/editarCancion.tpl');
 }

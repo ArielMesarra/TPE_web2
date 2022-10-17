@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-17 03:07:17
+/* Smarty version 4.2.1, created on 2022-10-17 14:04:38
   from '/opt/lampp/htdocs/TPE_web2/templates/editarCancion.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634caac5175ef3_84400643',
+  'unifunc' => 'content_634d44d62b6ea0_75296165',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd8fd99423b03945d9b28cc3175409fb0f7e9a6ab' => 
     array (
       0 => '/opt/lampp/htdocs/TPE_web2/templates/editarCancion.tpl',
-      1 => 1665968831,
+      1 => 1666008275,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_634caac5175ef3_84400643 (Smarty_Internal_Template $_smarty_tpl) {
-?><h2>Editar cancion</h2>
+function content_634d44d62b6ea0_75296165 (Smarty_Internal_Template $_smarty_tpl) {
+?><h2><?php echo $_smarty_tpl->tpl_vars['modo']->value;?>
+ cancion</h2>
 
  <form method="POST">
     <input type="" name="id" value="<?php echo $_smarty_tpl->tpl_vars['cancion']->value->id_canciones;?>

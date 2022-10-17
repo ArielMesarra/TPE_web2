@@ -1,4 +1,4 @@
-<h2>Editar cancion</h2>
+<h2>{$modo} cancion</h2>
 
  <form method="POST">
     <input type="" name="id" value="{$cancion->id_canciones}">
@@ -21,6 +21,6 @@
     {/foreach}
     </select>
     
-    <button type="submit">Editar</button>
+    <button type="submit">{$modo}</button>
 </form>
  

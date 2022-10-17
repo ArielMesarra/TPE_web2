@@ -38,16 +38,16 @@ require_once './app/models/EditarModel.php';
             $artistas=$this->bibliotecaModel->getArtistas();
             echo 'edotar cancion controller';
             // var_dump($cancion);
-            $this->view->mostrarEditarCancion($cancion,$artistas);
+            $this->view->mostrarEditarCancion($cancion,$artistas,"Editar");
             // var_dump($_POST);
-            if (!empty($_POST['nombre'])&& !empty($_POST['descripcion'])){
-                echo 'editando......';
-                // var_dump($_POST);
+            // if (!empty($_POST['nombre'])&& !empty($_POST['descripcion'])){
+            //     echo 'editando......';
+            //     // var_dump($_POST);
 
-                $this->editarModel->editarCancion($_POST);
-            header('location: '.BIBLIOTECA);
+            //     $this->editarModel->editarCancion($_POST);
+            // header('location: '.BIBLIOTECA);
 
-            }
+            // }
             
             
         }
