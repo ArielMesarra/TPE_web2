@@ -23,11 +23,13 @@ require_once './app/models/EditarModel.php';
         }
 
         function editarArtistaProceder($id){
-            echo $id;
-            // var_dump($_POST);
-            $this->editarModel->editarArtista($id,$_POST);
-            header('location: '.BIBLIOTECA);
+            if (empty($_POST['nombre'])||empty($_POST['lugar'])||empty($_POST['integrantes'])){
+                echo 'hay campos vacios';
+            }else{
 
+                $this->editarModel->editarArtista($id,$_POST);
+                header('location: '.BIBLIOTECA);
+            }
 
 
         }
@@ -39,9 +41,12 @@ require_once './app/models/EditarModel.php';
         }
 
         function confirmaEditarCancion($id,$datos){
-            $this->editarModel->editarCancion($id,$_POST);
-            header('location: '.BIBLIOTECA);
-       
+            if (empty($datos['nombre'])||empty($datos['descripcion'])||empty($datos['fecha'])){
+                echo 'hay campos vacios';
+            }else{
+                $this->editarModel->editarCancion($id,$_POST);
+                header('location: '.BIBLIOTECA);
+            }
         }
 
     }
