@@ -15,7 +15,7 @@
             if (empty($nombre)||empty($lugar)||empty($integrantes)){
                 echo 'hay campos vacios';
             }else{
-                $query = $this->db->prepare('INSERT INTO artistas(nombre, lugar, integrantes_num) VALUES (?,?,?)');
+                $query = $this->db->prepare('INSERT INTO artistas(nombre_artistas, lugar, integrantes_num) VALUES (?,?,?)');
                 $query->execute([$nombre, $lugar, $integrantes]);
         
             }
@@ -26,7 +26,7 @@
             $descripcion=$cancion['descripcion'];
             $fecha=$cancion['fecha'];
             $artista=$cancion['artista'];
-            $query = $this->db->prepare('INSERT INTO canciones(nombre, descripcion, fecha_estreno, fk_id_artistas) VALUES (?,?,?,?)');
+            $query = $this->db->prepare('INSERT INTO canciones(nombre_canciones, descripcion, fecha_estreno, fk_id_artistas) VALUES (?,?,?,?)');
             $query->execute([$nombre, $descripcion, $fecha, $artista]);  
         }
         

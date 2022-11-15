@@ -13,7 +13,7 @@
             $integrantes=$datos['integrantes'];
             
             // $query = $this->db->prepare('UPDATE nombre'.'SET nombre=? WHERE id_artistas=?');
-            $query = $this->db->prepare('UPDATE artistas SET nombre=? ,lugar=? ,integrantes_num=? WHERE id_artistas=? ');
+            $query = $this->db->prepare('UPDATE artistas SET nombre_artistas=? ,lugar=? ,integrantes_num=? WHERE id_artistas=? ');
             $query->execute([$nombre, $lugar, $integrantes, $id]);
             // echo '<h1>Ento en el editar MODEL</h1>';
         }
@@ -23,7 +23,7 @@
             $descripcion = $datos['descripcion'];
             $fecha = $datos['fecha'];
             $idArtista = (int)$datos['artista'];
-            $query = $this->db->prepare('UPDATE canciones SET nombre=? ,descripcion=? ,fecha_estreno=?, fk_id_artistas=? WHERE id_canciones=?');
+            $query = $this->db->prepare('UPDATE canciones SET nombre_canciones=? ,descripcion=? ,fecha_estreno=?, fk_id_artistas=? WHERE id_canciones=?');
             $query->execute([$nombre,$descripcion,$fecha,$idArtista, $id]);
         }
     } 
